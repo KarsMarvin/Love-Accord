@@ -1,17 +1,17 @@
 import './CharsReg.css'
 import { Link } from "react-router-dom";
 
-function CharsReg(){
+function CharsRegFinal(){
 
     return(
         <div className='characteristics'>
-            <h1>What Do Ya want as Match?</h1>
-            <h2>I am looking For...</h2>
+            <h1>Let's get you Someone!</h1>
+            <h2>Interests...</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>❤️A relationship</p>
+                <p>🎮Gaming</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -19,7 +19,7 @@ function CharsReg(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🚀Something casual</p>
+                <p>📺Movies</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -27,7 +27,7 @@ function CharsReg(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>😵Only For Valentine</p>
+                <p>💃Dancing</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -35,7 +35,7 @@ function CharsReg(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>😲Situationship</p>
+                <p>🎤Singing</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -46,11 +46,11 @@ function CharsReg(){
             
             <div className="button">
             <Link to="/happy-for-you">
-                <button>Next</button>
+                <button>Let's go</button>
             </Link>
             </div>
         </div>
     )
 }
 
-export default CharsReg;
+export default CharsRegFinal;

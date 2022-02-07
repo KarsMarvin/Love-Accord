@@ -11,8 +11,10 @@
 }
 
 :root {
-  --DarkBackground: black;
-  --TextMain: rgb(238, 122, 142);
+  --DarkBackground: rgb(6, 3, 8);
+  --TextMain: rgb(185, 31, 57);
+  --TextSec: rgba(245, 111, 133, 0.904);
+  --Card: rgba(6, 3, 8, 0.808);
   overflow-x: hidden;
 }
 
