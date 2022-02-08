@@ -83,3 +83,21 @@ button{
     width: 100%;
     height: 100%
 }
+
+.interestbutton{
+    display: flex;
+    justify-content: flex-end !important;
+    width: 95%;
+    height: 8%;
+}
+.interestbutton button{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 10%;
+    height: 100%
+}
+.interestbutton button:hover{
+    background-color: var(--TextMain);
+    color: white;
+    transition: all 0.5s;
+}
