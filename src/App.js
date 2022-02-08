@@ -5,7 +5,9 @@ import Searching from './match/Searching';
 import Values from './match/Values';
 import Music from './match/Music';
 import Sports from './match/Sports';
+import Creativity from './match/Creativity';
 import Interests from './match/Interests';
+import Social from './match/Social';
 import Notfound from './Notfound';
 
 function App() {
@@ -18,7 +20,9 @@ function App() {
           <Route path="/desc-your-ideal-match" exact element={<Values />} />
           <Route path="/music" exact element={<Music />} />
           <Route path="/sports" exact element={<Sports />} />
-          <Route path="/happy-for-you" exact element={<Interests />} />
+          <Route path="/creativity" exact element={<Creativity />} />
+          <Route path="/interests" exact element={<Interests />} />
+          <Route path="/social" exact element={<Social />} />
           <Route path="*" element={<Notfound />} />
         </Routes>
       </Router>
