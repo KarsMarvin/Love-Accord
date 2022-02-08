@@ -9,9 +9,9 @@ function Creativity(){
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World.</h1>
-            {/* <h1>In which creative way is your match?</h1> */}
-            {/* <h2>Creativity</h2> */}
+            {/* <h1>Hello Dear World.</h1> */}
+            <h1>In which creative way is your match?</h1>
+            <h2>Creativity</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>

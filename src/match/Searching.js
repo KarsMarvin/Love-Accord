@@ -5,9 +5,9 @@ function Searching(){
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World.</h1>
-            {/* <h1>What Do Ya want as Match?</h1> */}
-            {/* <h2>I am looking For...</h2> */}
+            {/* <h1>Hello Dear World.</h1> */}
+            <h1>What Do Ya want as Match?</h1>
+            <h2>I am looking For...</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>

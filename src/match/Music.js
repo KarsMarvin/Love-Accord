@@ -5,9 +5,9 @@ function Music(){
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World.</h1>
-            {/* <h1>What Type of songs or rythms?</h1> */}
-            {/* <h2>Music</h2> */}
+            {/* <h1>Hello Dear World.</h1> */}
+            <h1>What Type of songs or rythms?</h1>
+            <h2>Music</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>

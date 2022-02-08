@@ -1,5 +1,4 @@
 import './CharsReg.css'
-// import { Link } from "react-router-dom";
 import { useState } from 'react';
 // import axios from 'axios';
 
@@ -15,9 +14,9 @@ function Interests(){
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World!</h1>
-            {/* <h1>Let's get you Someone!</h1>
-            <h2>Interests...</h2> */}
+            {/* <h1>Hello Dear World!</h1> */}
+            <h1>Let's get you Someone!</h1>
+            <h2>Interests...</h2>
             <form className="cards-container">
             <div className='card' onChange={(e) => setSearching(e.target.value)}>
             <div className='input-item'>
