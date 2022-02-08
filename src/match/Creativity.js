@@ -3,7 +3,7 @@
 //making videos
 //photography
 import './CharsReg.css'
-import { Link } from "react-router-dom";
+import Next from '../components/Next';
 
 function Creativity(){
 
@@ -46,14 +46,11 @@ function Creativity(){
                 <input type="radio" name='searching'/>
                 </div>
             </div>
+
             </div>
-            </form>
             
-            <div className="button">
-            <Link to="/interests">
-                <button>Next</button>
-            </Link>
-            </div>
+            </form>
+        
         </div>
     )
 }
