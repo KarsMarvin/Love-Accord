@@ -46,7 +46,7 @@ function Music(){
             </form>
             
             <div className="button">
-            <Link to="/happy-for-you">
+            <Link to="/creativity">
                 <button>Next</button>
             </Link>
             </div>

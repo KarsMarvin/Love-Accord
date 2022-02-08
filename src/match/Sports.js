@@ -5,9 +5,9 @@ function Sports(){
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World.</h1>
-            {/* <h1>Which sports is he/she in?</h1> */}
-            {/* <h2>Sports</h2> */}
+            {/* <h1>Hello Dear World.</h1> */}
+            <h1>Which sports is he/she in?</h1>
+            <h2>Sports</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>

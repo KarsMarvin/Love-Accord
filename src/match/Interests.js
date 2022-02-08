@@ -45,8 +45,8 @@ function Interests(){
             </form>
             
             <div className="button">
-            <Link to="/happy-for-you">
-                <button>Let's go</button>
+            <Link to="/social">
+                <button>Next</button>
             </Link>
             </div>
         </div>
