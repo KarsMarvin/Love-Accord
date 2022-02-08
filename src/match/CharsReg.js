@@ -5,9 +5,9 @@ function CharsReg(){
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World.</h1>
-            {/* <h1>I'm into someone who's...and...!</h1> */}
-            {/* <h2>How is your match like?</h2> */}
+            {/* <h1>Hello Dear World.</h1> */}
+            <h1>I'm into someone who's...and...!</h1>
+            <h2>How is your match like?</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>
