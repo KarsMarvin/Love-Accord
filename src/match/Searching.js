@@ -1,17 +1,18 @@
 import './CharsReg.css'
 import { Link } from "react-router-dom";
 
-function CharsRegFinal(){
+function Searching(){
 
     return(
         <div className='characteristics'>
-            <h1>Let's get you Someone!</h1>
-            <h2>Interests...</h2>
+            <h1>Hello Dear World.</h1>
+            {/* <h1>What Do Ya want as Match?</h1> */}
+            {/* <h2>I am looking For...</h2> */}
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🎮Games</p>
+                <p>❤️A relationship</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -19,7 +20,7 @@ function CharsRegFinal(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>📺Movies</p>
+                <p>🚀Something casual</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -27,7 +28,7 @@ function CharsRegFinal(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>💃Dancing</p>
+                <p>😵Only For Valentine</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -35,7 +36,7 @@ function CharsRegFinal(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🎤Singing</p>
+                <p>😲Situationship</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -45,12 +46,12 @@ function CharsRegFinal(){
             </form>
             
             <div className="button">
-            <Link to="/happy-for-you">
-                <button>Let's go</button>
+            <Link to="/xtics">
+                <button>Next</button>
             </Link>
             </div>
         </div>
     )
 }
 
-export default CharsRegFinal;
+export default Searching;
