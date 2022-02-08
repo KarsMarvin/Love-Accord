@@ -14,14 +14,14 @@
     /* align-items: center; */
 }
 h1{
-    font-weight: 800;
+    font-weight: 600;
     font-size: 1.7em;
     text-align: center;
     color: var(--TextMain);
 }
 h2{
-    font-weight: 500;
-    font-size: 1.5em;
+    font-weight: 300;
+    font-size: 1.2em;
     text-align: center;
     color: rgba(180, 120, 120, 0.842);
     margin-top: 3%;
@@ -33,12 +33,20 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--Card);
+    background-color: var(--DarkBackground);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(53, 52, 54, 0.2);
+    /* box-shadow: 0px 0px 10px 0px rgba(53, 52, 54, 0.2); */
     color: rgba(173, 169, 169, 0.842);
     padding: 0.5%;
+    padding: 20px;
 }
+
+@media screen and (max-width: 780px) {
+    .card {
+        width: 100% !important;
+    }
+}
+
 .input-item{
     display: flex;
     justify-content: space-evenly;
@@ -46,7 +54,7 @@ h2{
     width: 100%;
     height: 22%;
     background-color: rgba(53, 52, 54, 0.274);
-    box-shadow: 0px 0px 10px 0px rgb(24, 22, 26);
+    /* box-shadow: 0px 0px 10px 0px rgb(24, 22, 26); */
     margin-bottom: 3%;
     border-radius: 10px;
 }
@@ -62,42 +70,4 @@ h2{
     width: 20%;
     height: 25%;
 }
-.button{
-    display: flex;
-    justify-content: flex-end !important;
-    width: 95%;
-    height: 8%;
-}
-a{
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
-    width: 10%;
-    height: 100%
-}
-a:hover{
-    background-color: var(--TextMain);
-    color: white;
-    transition: all 0.5s;
-}
-button{
-    width: 100%;
-    height: 100%
-}
 
-.interestbutton{
-    display: flex;
-    justify-content: flex-end !important;
-    width: 95%;
-    height: 8%;
-}
-.interestbutton button{
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
-    width: 10%;
-    height: 100%
-}
-.interestbutton button:hover{
-    background-color: var(--TextMain);
-    color: white;
-    transition: all 0.5s;
-}
