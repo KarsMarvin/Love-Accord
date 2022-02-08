@@ -1,18 +1,17 @@
 import './CharsReg.css'
 import { Link } from "react-router-dom";
 
-function CharsReg(){
+function Interests(){
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World.</h1>
-            {/* <h1>How is your match like?</h1> */}
-            {/* <h2>I'm into someone who's...</h2> */}
+            <h1>Let's get you Someone!</h1>
+            <h2>Interests...</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🧑🏼‍🦲Brown</p>
+                <p>🎮Games</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -20,7 +19,7 @@ function CharsReg(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🧑🏿‍🦲Black</p>
+                <p>📺Movies</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -28,30 +27,30 @@ function CharsReg(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>😛Tall</p>
+                <p>💃Dancing</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching1'/>
+                <input type="radio" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>😜Medium height</p>
+                <p>🎤Singing</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching1'/>
+                <input type="radio" name='searching'/>
                 </div>
             </div>
             </div>
             </form>
             
             <div className="button">
-            <Link to="/desc-your-ideal-match">
-                <button>Next</button>
+            <Link to="/happy-for-you">
+                <button>Let's go</button>
             </Link>
             </div>
         </div>
     )
 }
 
-export default CharsReg;
+export default Interests;
