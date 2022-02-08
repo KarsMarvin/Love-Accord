@@ -16,7 +16,7 @@ function Creativity(){
             <div className='card'>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>📝Writing</p>
+                <p>📝 Writing</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -24,7 +24,7 @@ function Creativity(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🎨Art</p>
+                <p>🎨 Art</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -32,7 +32,7 @@ function Creativity(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>📸Photography</p>
+                <p>📸 Photography</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -40,7 +40,7 @@ function Creativity(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🎥Making Videos</p>
+                <p>🎥 Making Videos</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
