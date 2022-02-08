@@ -1,17 +1,18 @@
 import './CharsReg.css'
 import { Link } from "react-router-dom";
 
-function CharsRegFinal(){
+function Values(){
 
     return(
         <div className='characteristics'>
-            <h1>Let's get you Someone!</h1>
-            <h2>Interests...</h2>
+            <h1>Hello Dear World.</h1>
+            {/* <h1>Tell us more About him/her!</h1> */}
+            {/* <h2>Values and traits</h2> */}
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🎮Gaming</p>
+                <p>😎Confidence</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -19,7 +20,7 @@ function CharsRegFinal(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>📺Movies</p>
+                <p>🏆Being Active</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -27,7 +28,7 @@ function CharsRegFinal(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>💃Dancing</p>
+                <p>🖌️Creativity</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -35,7 +36,7 @@ function CharsRegFinal(){
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🎤Singing</p>
+                <p>💙Empathy</p>
                 </div>
                 <div className="input">   
                 <input type="radio" name='searching'/>
@@ -45,12 +46,12 @@ function CharsRegFinal(){
             </form>
             
             <div className="button">
-            <Link to="/happy-for-you">
-                <button>Let's go</button>
+            <Link to="/music">
+                <button>Next</button>
             </Link>
             </div>
         </div>
     )
 }
 
-export default CharsRegFinal;
+export default Values;
