@@ -29,7 +29,7 @@ function Social(){
                 <p>👨🏻‍💻Science&tech</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching' required="required"/>
+                <input type="radio" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>

@@ -5,9 +5,9 @@ function Values(){
 
     return(
         <div className='characteristics'>
-            {/* <h1>Hello Dear World.</h1> */}
-            <h1>Tell us more About him/her!</h1>
-            <h2>Values and traits</h2>
+            <h1>Hello Dear World.</h1>
+            {/* <h1>Tell us more About him/her!</h1>
+            <h2>Values and traits</h2> */}
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>
