@@ -18,7 +18,7 @@ export class Description extends Component {
                             <small>Choose the Answers That Best Describe You.</small>
                         </div>
                         <br></br>
-                        <div class="form-group form-check input-item">
+                        <div class="form-group form-check ">
                             <input className="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1"></input>
                             <label className="form-check-label" htmlFor="flexRadioDefault1"> Brown </label>
                         </div>

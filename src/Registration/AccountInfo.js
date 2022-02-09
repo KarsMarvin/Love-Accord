@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/AccountInfo.css'
 
 export class AccountInfo extends Component {
     continue = e => {
@@ -9,7 +10,7 @@ export class AccountInfo extends Component {
   render() {
     const { values, inputChange } = this.props
     return (
-        <section className='container-fluid bg'>
+        <section className='container-fluid'>
             <section className='row justify-content-center'>
                 <section className='col-12 col-sm-3 col-md-6 '>
                     <form className='form-container w-75'>

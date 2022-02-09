@@ -2,7 +2,6 @@
 import './App.css';import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CharsReg from './match/CharsReg';
 import Searching from './match/Searching';
-import ComponentSwitcher from './components/ComponentSwitcher'
 import Values from './match/Values';
 import Music from './match/Music';
 import Sports from './match/Sports';
@@ -10,6 +9,7 @@ import Creativity from './match/Creativity';
 import Interests from './match/Interests';
 import Social from './match/Social';
 import Notfound from './Notfound';
+import ComponentSwitcher from './components/ComponentSwitcher'
 function App() {
   return (
     <div className='app'>

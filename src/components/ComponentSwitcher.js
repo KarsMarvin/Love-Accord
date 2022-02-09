@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AccountInfo from '../Registration/AccountInfo';
-import Description from '../Registration/Description'
+import Desc from '../Registration/CharsReg'
+import Searching from '../Registration/Searching'
+import Music from '../Registration/Music'
 export class SignUp extends Component {
   state={
     step:1,
@@ -37,7 +39,7 @@ export class SignUp extends Component {
             );
         case 2:
             return (
-                 <Description
+                 <Desc
                     nextStep={this.nextStep}
                     inputChange={this.inputChange}
                     values={values}
@@ -45,7 +47,7 @@ export class SignUp extends Component {
             );
         case 3:
             return (
-               <AccountInfo
+               <Searching
                     nextStep={this.nextStep}
                     inputChange={this.inputChange}
                     values={values}
@@ -53,7 +55,7 @@ export class SignUp extends Component {
             );
         case 4:
             return (
-               <AccountInfo
+               <Music
                     nextStep={this.nextStep}
                     inputChange={this.inputChange}
                     values={values}
