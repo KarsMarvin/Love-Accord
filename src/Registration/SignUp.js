@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AccountInfo from './AccountInfo';
+import Description from './Description'
 export class SignUp extends Component {
   state={
     step:1,
@@ -11,10 +12,10 @@ export class SignUp extends Component {
     const { step } = this.state;  
     this.setState({step: step+1})
   }
-  prevStep=()=>{
-    const { step } = this.state;  
-    this.setState({step: step-1})
-  }
+  // prevStep=()=>{
+  //   const { step } = this.state;  
+  //   this.setState({step: step-1})
+  // }
   inputChange = input=>e=>{
     this.setState({
       [input]: e.target.value
@@ -36,7 +37,7 @@ export class SignUp extends Component {
             );
         case 2:
             return (
-                 <AccountInfo
+                 <Description
                     nextStep={this.nextStep}
                     inputChange={this.inputChange}
                     values={values}

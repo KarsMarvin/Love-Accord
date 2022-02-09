@@ -1,5 +1,5 @@
 import './CharsReg.css'
-import { Link } from "react-router-dom";
+
 
 function CharsReg(){
 
@@ -45,11 +45,9 @@ function CharsReg(){
             </div>
             </form>
             
-            <div className="button">
-            <Link to="/desc-your-ideal-match">
-                <button>Next</button>
-            </Link>
-            </div>
+            <div className="text-right">
+                            <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+                        </div>
         </div>
     )
 }
