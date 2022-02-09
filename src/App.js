@@ -1,5 +1,5 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import './App.css';import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CharsReg from './match/CharsReg';
 import Searching from './match/Searching';
 import Values from './match/Values';
@@ -9,12 +9,13 @@ import Creativity from './match/Creativity';
 import Interests from './match/Interests';
 import Social from './match/Social';
 import Notfound from './Notfound';
-
+import ComponentSwitcher from './components/ComponentSwitcher'
 function App() {
   return (
     <div className='app'>
       <Router>
         <Routes>
+          <Route path="/" exact element={<ComponentSwitcher />} />
           <Route path="/get-your-match" exact element={<Searching />} />
           <Route path="/xtics" exact element={<CharsReg />} />
           <Route path="/desc-your-ideal-match" exact element={<Values />} />
@@ -29,5 +30,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
