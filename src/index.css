@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,11 +11,11 @@
 }
 
 :root {
-  --DarkBackground: #010209;
-  --TextMain: rgb(223, 46, 193);
+  --DarkBackground: rgb(6, 3, 8);
+  --TextMain: rgb(185, 31, 57);
   --TextSec: rgba(245, 111, 133, 0.904);
   --Card: rgba(6, 3, 8, 0.808);
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 body {
@@ -41,8 +41,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-*, button, a {
-  font-family: "Montserrat";
 }
