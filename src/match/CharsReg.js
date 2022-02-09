@@ -1,7 +1,10 @@
 import './CharsReg.css'
-import { Link } from "react-router-dom";
+import NextButton from '../components/NextButton';
 
 function CharsReg(){
+    const submitHandler = async (e) => {
+        
+    }
 
     return(
         <div className='characteristics'>
@@ -26,7 +29,7 @@ function CharsReg(){
                 <input type="radio" name='searching'/>
                 </div>
             </div>
-            <div className='input-item'>
+            <div className='input-item mt-4'>
                  <div className="paragraph">
                 <p>😛Tall</p>
                 </div>
@@ -45,11 +48,7 @@ function CharsReg(){
             </div>
             </form>
             
-            <div className="button">
-            <Link to="/desc-your-ideal-match">
-                <button>Next</button>
-            </Link>
-            </div>
+            <NextButton onClick={submitHandler} className='interestnext'/>
         </div>
     )
 }

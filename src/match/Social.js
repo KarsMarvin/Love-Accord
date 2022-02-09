@@ -1,5 +1,4 @@
 import './Social.css'
-import { Link } from "react-router-dom";
 
 function Social(){
 
@@ -75,10 +74,8 @@ function Social(){
             </div>
             </form>
             
-            <div className="button">
-            <Link to="/social">
-                <button type='submit'>Let's go</button>
-            </Link>
+            <div className="socialbutton">
+                <button type='submit' className='socialnext'>Let's go</button>
             </div>
         </div>
     )

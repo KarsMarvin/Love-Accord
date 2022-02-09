@@ -68,24 +68,21 @@ h2{
     width: 20%;
     height: 25%;
 }
-.button{
+
+.socialbutton{
     display: flex;
     justify-content: flex-end !important;
     width: 95%;
     height: 8%;
 }
-a{
+.socialnext{
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     width: 10%;
     height: 100%
 }
-a:hover{
+.socialnext:hover{
     background-color: var(--TextMain);
     color: white;
     transition: all 0.5s;
-}
-button{
-    width: 100%;
-    height: 100%
 }
