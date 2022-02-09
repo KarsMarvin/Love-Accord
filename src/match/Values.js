@@ -1,7 +1,10 @@
 import './CharsReg.css'
-import { Link } from "react-router-dom";
+import NextButton from '../components/NextButton';
 
 function Values(){
+    const submitHandler = async (e) => {
+        
+    }
 
     return(
         <div className='characteristics'>
@@ -45,11 +48,7 @@ function Values(){
             </div>
             </form>
             
-            <div className="button">
-            <Link to="/music">
-                <button>Next</button>
-            </Link>
-            </div>
+            <NextButton onClick={submitHandler} className='interestnext'/>
         </div>
     )
 }

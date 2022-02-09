@@ -1,13 +1,16 @@
 import './CharsReg.css'
-
+import NextButton from '../components/NextButton';
 
 function CharsReg(){
+    const submitHandler = async (e) => {
+        
+    }
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World.</h1>
-            {/* <h1>I'm into someone who's...and...!</h1> */}
-            {/* <h2>How is your match like?</h2> */}
+            {/* <h1>Hello Dear World.</h1> */}
+            <h1>I'm into someone who's...and...!</h1>
+            <h2>How is your match like?</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>
@@ -26,7 +29,7 @@ function CharsReg(){
                 <input type="radio" name='searching'/>
                 </div>
             </div>
-            <div className='input-item'>
+            <div className='input-item mt-4'>
                  <div className="paragraph">
                 <p>😛Tall</p>
                 </div>
@@ -45,9 +48,7 @@ function CharsReg(){
             </div>
             </form>
             
-            <div className="text-right">
-                            <button className="btn btn-primary" onClick={this.continue}>Continue</button>
-                        </div>
+            <NextButton onClick={submitHandler} className='interestnext'/>
         </div>
     )
 }

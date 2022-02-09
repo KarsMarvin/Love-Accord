@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import AccountInfo from './AccountInfo';
-import Description from './Description'
+import AccountInfo from '../Registration/AccountInfo';
+import Description from '../Registration/Description'
 export class SignUp extends Component {
   state={
     step:1,

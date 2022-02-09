@@ -1,13 +1,16 @@
 import './CharsReg.css'
-import { Link } from "react-router-dom";
+import NextButton from '../components/NextButton';
 
 function Music(){
+    const submitHandler = async (e) => {
+        
+    }
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World.</h1>
-            {/* <h1>What Type of songs or rythms?</h1> */}
-            {/* <h2>Music</h2> */}
+            {/* <h1>Hello Dear World.</h1> */}
+            <h1>What Type of songs or rythm?</h1>
+            <h2>Music</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>
@@ -45,11 +48,7 @@ function Music(){
             </div>
             </form>
             
-            <div className="button">
-            <Link to="/creativity">
-                <button>Next</button>
-            </Link>
-            </div>
+            <NextButton onClick={submitHandler} className='interestnext'/>
         </div>
     )
 }

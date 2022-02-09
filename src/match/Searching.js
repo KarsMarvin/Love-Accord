@@ -1,13 +1,16 @@
 import './CharsReg.css'
-import { Link } from "react-router-dom";
+import NextButton from '../components/NextButton';
 
 function Searching(){
+    const submitHandler = async (e) => {
+        
+    }
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World.</h1>
-            {/* <h1>What Do Ya want as Match?</h1> */}
-            {/* <h2>I am looking For...</h2> */}
+            {/* <h1>Hello Dear World.</h1> */}
+            <h1>What Do Ya want as Match?</h1>
+            <h2>I am looking For...</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>
@@ -45,11 +48,7 @@ function Searching(){
             </div>
             </form>
             
-            <div className="button">
-            <Link to="/xtics">
-                <button>Next</button>
-            </Link>
-            </div>
+            <NextButton onClick={submitHandler} className='interestnext'/>
         </div>
     )
 }

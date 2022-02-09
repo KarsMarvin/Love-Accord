@@ -1,17 +1,16 @@
-//writing
-//art
-//making videos
-//photography
 import './CharsReg.css'
-import { Link } from "react-router-dom";
+import NextButton from '../components/NextButton';
 
 function Creativity(){
+    const submitHandler = async (e) => {
+        
+    }
 
     return(
         <div className='characteristics'>
-            <h1>Hello Dear World.</h1>
-            {/* <h1>In which creative way is your match?</h1> */}
-            {/* <h2>Creativity</h2> */}
+            {/* <h1>Hello Dear World.</h1> */}
+            <h1>In which creative way is your match?</h1>
+            <h2>Creativity</h2>
             <form className="cards-container">
             <div className='card'>
             <div className='input-item'>
@@ -49,11 +48,7 @@ function Creativity(){
             </div>
             </form>
             
-            <div className="button">
-            <Link to="/interests">
-                <button>Next</button>
-            </Link>
-            </div>
+            <NextButton onClick={submitHandler} className='interestnext'/>
         </div>
     )
 }
