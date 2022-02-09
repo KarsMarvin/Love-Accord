@@ -1,5 +1,6 @@
 import './CharsReg.css'
 import { useState } from 'react';
+import NextButton from '../components/NextButton';
 // import axios from 'axios';
 
 function Interests(){
@@ -15,7 +16,7 @@ function Interests(){
     return(
         <div className='characteristics'>
             {/* <h1>Hello Dear World!</h1> */}
-            <h1>Let's get you Someone!</h1>
+            <h1>Let's get you the perfect one!</h1>
             <h2>Interests...</h2>
             <form className="cards-container">
             <div className='card' onChange={(e) => setSearching(e.target.value)}>
@@ -54,11 +55,7 @@ function Interests(){
             </div>
             </form>
             
-            <div className="interestbutton">
-            {/* <Link to="/social"> */}
-                <button onClick={submitHandler} className='interestnext'>Next</button>
-            {/* </Link> */}
-            </div>
+            <NextButton onClick={submitHandler} className='interestnext'/>
         </div>
     )
 }
