@@ -40,7 +40,7 @@ export class AccountInfo extends Component {
                         <br />
 
                         <div className="text-right">
-                            <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+                            <button className="btn " onClick={this.continue}>Continue</button>
                         </div>
                     </form>
                 </section>
