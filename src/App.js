@@ -1,23 +1,8 @@
-// import './App.css';
-// import ComponentSwitcher from './components/ComponentSwitcher'
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <div className='container'>
-//       <ComponentSwitcher />
-//       </div>      
-
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import './App.css';import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CharsReg from './match/CharsReg';
 import Searching from './match/Searching';
+import ComponentSwitcher from './components/ComponentSwitcher'
 import Values from './match/Values';
 import Music from './match/Music';
 import Sports from './match/Sports';
@@ -30,6 +15,7 @@ function App() {
     <div className='app'>
       <Router>
         <Routes>
+          <Route path="/" exact element={<ComponentSwitcher />} />
           <Route path="/get-your-match" exact element={<Searching />} />
           <Route path="/xtics" exact element={<CharsReg />} />
           <Route path="/desc-your-ideal-match" exact element={<Values />} />
