@@ -9,6 +9,7 @@ function Interests(){
     const submitHandler = async (e) => {
         e.preventDefault();
         if(searching.length > 0){
+            console.log(searching);
             window.location.href = "/social";
         }
     };
