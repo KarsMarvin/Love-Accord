@@ -61,6 +61,13 @@ export class SignUp extends Component {
                     values={values}
                 />
             );
+        default: return (
+          <Music
+            nextStep={this.nextStep}
+            inputChange={this.inputChange}
+            values={values}
+          />
+        )
     }
 }
 }
