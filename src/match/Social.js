@@ -1,4 +1,4 @@
-import './Social.css'
+import './Social.scss'
 
 function Social(){
 
