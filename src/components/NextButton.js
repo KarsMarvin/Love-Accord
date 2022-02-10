@@ -1,4 +1,4 @@
-import '../match/CharsReg.css'
+import '../match/CharsReg.scss'
 
 function NextButton(){
 
