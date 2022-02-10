@@ -1,6 +1,7 @@
 import './CharsReg.css'
 import NextButton from '../components/NextButton';
 import axios from 'axios';
+import { useState } from 'react';
 
 function Sports({ allvalues, values, inputChange, nextStep }){
     let config = {
@@ -21,13 +22,35 @@ function Sports({ allvalues, values, inputChange, nextStep }){
                 config
                 ).then(res=>{
                   console.log(res.data);
-                  // window.location.href = "/home";
+                  window.location.href = "/results";
                 }).catch(err=>{
                   console.log(err);
                   window.alert("Something went wrong,try again in sometime");
                 })
             nextStep();
         }
+    }
+
+    const [xtics, setxtics] = useState([
+        {name: "⚽ Football", active: false, value: "football"},
+        {name: "🏀 Basketball", active: false, value: "basketball"},
+        {name: "🏐 Volleyball", active: false, value: "volleyball"},
+        {name: "🏓 Pingpong", active: false, value: "pingpong"}
+    ])
+
+    let handleChange = (name) => {
+        let xticsCopy = [...xtics]
+        for(let i = 0; i<xticsCopy.length; i++){
+            if(xticsCopy[i].name === name){
+                xticsCopy[i].active = true
+                inputChange(xticsCopy[i].value)
+                console.log(xticsCopy[i].value)
+            }
+            else {
+                xticsCopy[i].active = false
+            }
+        }
+        setxtics(xticsCopy)
     }
 
     return(
@@ -37,38 +60,13 @@ function Sports({ allvalues, values, inputChange, nextStep }){
             <h2>Sports</h2>
             <form className="cards-container">
             <div className='card' onChange={(e) => inputChange(e.target.value)}>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>⚽Football</p>
+            { xtics && xtics.map((xtic, i) => (                
+                <div key={i} className={xtic.active ? "input-item active" : "input-item"} onClick={e => handleChange(xtic.name)}>
+                    <div className="paragraph">
+                        <p>{xtic.name}</p>
+                    </div>
                 </div>
-                <div className="input">   
-                <input type="radio" name='searching' value="football"/>
-                </div>
-            </div>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>🏀Basketball</p>
-                </div>
-                <div className="input">   
-                <input type="radio" name='searching' value="basketball"/>
-                </div>
-            </div>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>🏐Volleyball</p>
-                </div>
-                <div className="input">   
-                <input type="radio" name='searching' value="volleyball"/>
-                </div>
-            </div>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>🏓Pingpong</p>
-                </div>
-                <div className="input">   
-                <input type="radio" name='searching' value="pingpong"/>
-                </div>
-            </div>
+                ))}
             </div>
             </form>
             

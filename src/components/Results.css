@@ -1,0 +1,35 @@
+.results{
+    width: 100%;
+    height: 100%;
+    padding: 4% 0 1% 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.7em;
+    text-align: center;
+    color: var(--TextMain);
+}
+
+.results-container{
+    width: 35%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(53, 52, 54, 0.274);
+    border-radius: 5px;
+    color: rgba(173, 169, 169, 0.842);
+    padding: 0.5%;
+}
+
+@media screen and (max-width: 780px) {
+    .results-container {
+        width: 75%;
+    }
+}
