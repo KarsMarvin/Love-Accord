@@ -1,4 +1,4 @@
-import './CharsReg.css'
+import './CharsReg.scss'
 import { useState } from 'react';
 import NextButton from '../components/NextButton';
 // import axios from 'axios';
