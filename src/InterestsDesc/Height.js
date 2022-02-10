@@ -6,7 +6,6 @@ function Height({ values, inputChange, nextStep }){
         e.preventDefault();
         if(values.length !== 0){
             nextStep();
-            console.log(values,"incomponentheighttt");
         }
     }
 
