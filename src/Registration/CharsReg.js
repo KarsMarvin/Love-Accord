@@ -19,7 +19,7 @@ export class Desc extends Component {
                 <p>🧑🏼‍🦲Brown</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="brown" name='skincolor'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -27,7 +27,7 @@ export class Desc extends Component {
                 <p>🧑🏿‍🦲Black</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="black" name='skincolor'/>
                 </div>
             </div>
             <div className='input-item mt-4'>
@@ -35,7 +35,7 @@ export class Desc extends Component {
                 <p>😛Tall</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching1'/>
+                <input type="radio" value="tall" name='height'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -43,15 +43,15 @@ export class Desc extends Component {
                 <p>😜Medium height</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching1'/>
+                <input type="radio" value="medium" name='height'/>
                 </div>
             </div>
             </div>
             </form>
             
             <div className="text-right interestbutton">
-                            <button className="btn btn-primary interestnext" onClick={this.continue}>Next</button>
-                        </div>
+                <button className="btn btn-primary interestnext" onClick={this.continue}>Next</button>
+            </div>
         </div>
     )
         

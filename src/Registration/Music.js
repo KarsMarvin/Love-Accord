@@ -1,10 +1,12 @@
+import React, { Component } from 'react';
 import './CharsReg.css'
-import NextButton from '../components/NextButton';
 
-function Music(){
-    const submitHandler = async (e) => {
-        
-    }
+export class Music extends Component {
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+    };
+  render() {
 
     return(
         <div className='characteristics'>
@@ -18,7 +20,7 @@ function Music(){
                 <p>🎧Hip Hop</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="hippop" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -26,7 +28,7 @@ function Music(){
                 <p>🎶R&B</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="r&b" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -34,7 +36,7 @@ function Music(){
                 <p>🎺Classical</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="classical" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -42,15 +44,18 @@ function Music(){
                 <p>🎹Drill</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="drill" name='searching'/>
                 </div>
             </div>
             </div>
             </form>
             
-            <NextButton onClick={submitHandler} className='interestnext'/>
+            <div className="text-right interestbutton">
+                <button className="btn btn-primary interestnext" onClick={this.continue}>Next</button>
+            </div>
         </div>
     )
+}
 }
 
 export default Music;

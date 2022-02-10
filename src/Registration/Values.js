@@ -1,11 +1,12 @@
+import React, { Component } from 'react';
 import './CharsReg.css'
-import NextButton from '../components/NextButton';
 
-function Values(){
-    const submitHandler = async (e) => {
-        
-    }
-
+export class Values extends Component {
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+    };
+  render() {
     return(
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
@@ -18,7 +19,7 @@ function Values(){
                 <p>😎Confidence</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="confidence" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -26,7 +27,7 @@ function Values(){
                 <p>🏆Being Active</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="active" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -34,7 +35,7 @@ function Values(){
                 <p>🖌️Creativity</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="creativity" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -42,15 +43,17 @@ function Values(){
                 <p>💙Empathy</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="empathy" name='searching'/>
                 </div>
             </div>
             </div>
             </form>
             
-            <NextButton onClick={submitHandler} className='interestnext'/>
+            <div className="text-right interestbutton">
+                <button className="btn btn-primary interestnext" onClick={this.continue}>Next</button>
+            </div>
         </div>
     )
 }
-
+}
 export default Values;

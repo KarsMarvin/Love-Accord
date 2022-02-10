@@ -1,11 +1,12 @@
+import React, { Component } from 'react';
 import './CharsReg.css'
-import NextButton from '../components/NextButton';
 
-function Creativity(){
-    const submitHandler = async (e) => {
-        
-    }
-
+export class Creativity extends Component {
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+    };
+  render() {
     return(
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
@@ -18,7 +19,7 @@ function Creativity(){
                 <p>📝Writing</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" values="writing" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -26,7 +27,7 @@ function Creativity(){
                 <p>🎨Art</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" values="art" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -34,7 +35,7 @@ function Creativity(){
                 <p>📸Photography</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" values="photograph" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -42,15 +43,17 @@ function Creativity(){
                 <p>🎥Making Videos</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" values="makingvideo" name='searching'/>
                 </div>
             </div>
             </div>
             </form>
             
-            <NextButton onClick={submitHandler} className='interestnext'/>
+            <div className="text-right interestbutton">
+                <button className="btn btn-primary interestnext" onClick={this.continue}>Next</button>
+            </div>
         </div>
     )
 }
-
+}
 export default Creativity;

@@ -12,7 +12,7 @@ function Social(){
                 <p>🧑🏽‍🎤Show-bizz</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="showbizz" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -20,7 +20,7 @@ function Social(){
                 <p>🤽🏿‍♀️Sports</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="sports" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -28,7 +28,7 @@ function Social(){
                 <p>👨🏻‍💻Science&tech</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="science&tech" name='searching'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -36,7 +36,7 @@ function Social(){
                 <p>🧑🏽‍💼Business</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="business" name='searching'/>
                 </div>
             </div>
             <div className='input-item mt-4'>
@@ -44,7 +44,7 @@ function Social(){
                 <p>🔶Instagram</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching1'/>
+                <input type="radio" value="ig" name='searching1'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -52,7 +52,7 @@ function Social(){
                 <p>🔷Twitter</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching1'/>
+                <input type="radio" value="twitter" name='searching1'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -60,7 +60,7 @@ function Social(){
                 <p>🟩Whatsapp</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching1'/>
+                <input type="radio" value="tsapp" name='searching1'/>
                 </div>
             </div>
             <div className='input-item'>
@@ -68,7 +68,7 @@ function Social(){
                 <p>🔵Facebook</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching1'/>
+                <input type="radio" value="fb" name='searching1'/>
                 </div>
             </div>
             </div>
