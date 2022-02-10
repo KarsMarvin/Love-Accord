@@ -12,6 +12,8 @@ function Sports({ allvalues, values, inputChange, nextStep }){
     const submitHandler = async (e) => {
         e.preventDefault();
         if(values.length !== 0){
+            let loader = document.querySelector('.midloader');
+            loader.style.display = 'block';
               axios.post('http://v-a-l.herokuapp.com/api/users/interest',
                 {
                   sports: allvalues[0],
@@ -21,9 +23,11 @@ function Sports({ allvalues, values, inputChange, nextStep }){
                 },
                 config
                 ).then(res=>{
+                  loader.style.display = 'none';
                   console.log(res.data);
                   window.location.href = "/results";
                 }).catch(err=>{
+                  loader.style.display = 'none';
                   console.log(err);
                   window.alert("Something went wrong,try again in sometime");
                 })
@@ -69,7 +73,7 @@ function Sports({ allvalues, values, inputChange, nextStep }){
                 ))}
             </div>
             </form>
-            
+            <span class="bg-danger spinner-border spinner-border-sm mx-auto midloader"></span>
             <div className='buttondiv' onClick={e => submitHandler(e)}>
                 <NextButton title={"Get Results"}/>
             </div>
