@@ -71,7 +71,7 @@ function Sports({ allvalues, values, inputChange, nextStep }){
             </form>
             
             <div className='buttondiv' onClick={e => submitHandler(e)}>
-                <NextButton/>
+                <NextButton title={"Get Results"}/>
             </div>
         </div>
     )
