@@ -1,4 +1,4 @@
-import './CharsReg.scss'
+import './CharsReg.css'
 import NextButton from '../components/NextButton';
 import HeartSVG from '../components/HeartSVG';
 
