@@ -47,12 +47,20 @@ h2{
     background-color: rgba(53, 52, 54, 0.274);
     margin-bottom: 3%;
     border-radius: 10px;
+    cursor: pointer;
 }
+
+.input-item.active {
+    color: white;
+    background-color: var(--TextMain);
+}
+
 .paragraph{
     display: flex;
     justify-content: flex-start;
     width: 80%;
-    padding-left: 10%
+    padding-left: 5%;
+    padding-top: 5%
 }
 .input{
     display: flex;
@@ -89,6 +97,6 @@ h2{
 
 @media screen and (max-width: 780px) {
     .card {
-        width: 100%;
+        width: 75%;
     }
 }
