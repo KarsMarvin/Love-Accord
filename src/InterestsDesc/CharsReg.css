@@ -94,6 +94,9 @@ h2{
     width: 95%;
     height: 8%;
 }
+.midloader{
+    display: none;
+}
 
 @media screen and (max-width: 780px) {
     .card {
