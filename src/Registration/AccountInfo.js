@@ -11,7 +11,7 @@ export class AccountInfo extends Component {
     const { values, inputChange } = this.props
     return (
         <section className='container-fluid'>
-            <section className='row justify-content-center'>
+            <section className='row justify-content-center align-items-center'>
                 <section className='col-12 col-sm-3 col-md-6 '>
                     <form className='form-container w-75'>
                      <h3 card-title>Account Info</h3>
@@ -40,7 +40,7 @@ export class AccountInfo extends Component {
                         <br />
 
                         <div className="text-right">
-                            <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+                            <button className="btn " onClick={this.continue}>Continue</button>
                         </div>
                     </form>
                 </section>
