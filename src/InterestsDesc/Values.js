@@ -1,4 +1,4 @@
-import './CharsReg.css'
+import './CharsReg.scss'
 import NextButton from '../components/NextButton';
 
 function Values({ values, inputChange, nextStep }){

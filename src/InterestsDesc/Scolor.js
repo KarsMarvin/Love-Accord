@@ -1,5 +1,6 @@
-import './CharsReg.css'
+import './CharsReg.scss'
 import NextButton from '../components/NextButton';
+import HeartSVG from '../components/HeartSVG';
 
 function Scolor({ values, inputChange, nextStep }){
     const submitHandler = async (e) => {
@@ -12,6 +13,9 @@ function Scolor({ values, inputChange, nextStep }){
 
     return(
         <div className='characteristics'>
+            <div>
+                <HeartSVG/>
+            </div>
             {/* <h1>Hello Dear World.</h1> */}
             <h1>I'm into someone who's...!</h1>
             <h2>How is your match like?</h2>

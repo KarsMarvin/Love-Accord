@@ -4,6 +4,7 @@
     padding: 4% 0 1% 0;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .cards-container{
     display: flex;
