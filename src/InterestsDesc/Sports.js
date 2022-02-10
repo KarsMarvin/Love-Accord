@@ -1,64 +1,61 @@
 import './CharsReg.css'
-import { useState } from 'react';
 import NextButton from '../components/NextButton';
-// import axios from 'axios';
 
-function Interests(){
-
-    const [searching, setSearching] = useState("");
+function Sports({ values, inputChange, nextStep }){
     const submitHandler = async (e) => {
         e.preventDefault();
-        if(searching.length > 0){
-            console.log(searching);
-            window.location.href = "/social";
+        if(values.length !== 0){
+            nextStep();
         }
-    };
+    }
 
     return(
         <div className='characteristics'>
-            {/* <h1>Hello Dear World!</h1> */}
-            <h1>Let's get you the perfect one!</h1>
-            <h2>Interests...</h2>
+            {/* <h1>Hello Dear World.</h1> */}
+            <h1>Which sports is he/she in?</h1>
+            <h2>Sports</h2>
             <form className="cards-container">
-            <div className='card' onChange={(e) => setSearching(e.target.value)}>
+            <div className='card' onChange={(e) => inputChange(e.target.value)}>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🎮Games</p>
+                <p>⚽Football</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching' value="games"/>
+                <input type="radio" name='searching' value="football"/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>📺Movies</p>
+                <p>🏀Basketball</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching' value="movies"/>
+                <input type="radio" name='searching' value="basketball"/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>💃Dancing</p>
+                <p>🏐Volleyball</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching' value="dancing"/>
+                <input type="radio" name='searching' value="volleyball"/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🎤Singing</p>
+                <p>🏓Pingpong</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching' value="singing"/>
+                <input type="radio" name='searching' value="pingpong"/>
                 </div>
             </div>
             </div>
             </form>
             
-            <NextButton onClick={submitHandler} className='interestnext'/>
+            <div className='buttondiv' onClick={e => submitHandler(e)}>
+                <NextButton/>
+            </div>
         </div>
     )
 }
 
-export default Interests;
+export default Sports;

@@ -1,56 +1,61 @@
 import './CharsReg.css'
 import NextButton from '../components/NextButton';
 
-function Sports(){
+function Values({ values, inputChange, nextStep }){
     const submitHandler = async (e) => {
-        
+        e.preventDefault();
+        if(values.length !== 0){
+            nextStep();
+        }
     }
 
     return(
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
-            <h1>Which sports is he/she in?</h1>
-            <h2>Sports</h2>
+            <h1>Tell us more About him/her!</h1>
+            <h2>Values and traits</h2>
             <form className="cards-container">
-            <div className='card'>
+            <div className='card' onChange={(e) => inputChange(e.target.value)}>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>⚽Football</p>
+                <p>😎Respect</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" name='searching' value="respect"/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🏀Basketball</p>
+                <p>🏆Commitment</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" name='searching' value="commitment"/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🏐Volleyball</p>
+                <p>🖌️Companionship</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" name='searching' value="companionship"/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🏓Pingpong</p>
+                <p>💙Empathy</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" name='searching' value="empathy"/>
                 </div>
             </div>
             </div>
             </form>
             
-            <NextButton onClick={submitHandler} className='interestnext'/>
+            <div className='buttondiv' onClick={e => submitHandler(e)}>
+                <NextButton/>
+            </div>
         </div>
     )
 }
 
-export default Sports;
+export default Values;
