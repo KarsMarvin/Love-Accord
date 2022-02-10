@@ -1,10 +1,10 @@
 import '../InterestsDesc/CharsReg.css'
 
-function NextButton(){
+function NextButton({title="Next"}){
 
     return(
             <div className="interestbutton">
-                <button>Next</button>
+                <button>{title}</button>
             </div>
     )
 }
