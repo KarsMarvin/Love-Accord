@@ -1,16 +1,16 @@
 import './Results.scss';
-import {useState} from "react"
+// import {useState} from "react"
 import jwtDecode from 'jwt-decode';
 import Loader from "../components/heartsloader.gif"
 
 function Results(){
-    let decoded
+    // let decoded;
     let token = localStorage.token
-    const [userMatch, setuserMatch] = useState(undefined)
+    // const [userMatch, setuserMatch] = useState(undefined)
     let wait = true
     if(token){
         try {
-            decoded = jwtDecode(token)
+            jwtDecode(token)
         } catch (error) {
             window.location.href = "/"
         }
