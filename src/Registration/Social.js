@@ -41,7 +41,7 @@ function Social(props){
             }
         }
         setsocialxtics(socialCopy)
-        console.log(socialCopy)
+        // console.log(socialCopy)
     }
 
 

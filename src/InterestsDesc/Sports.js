@@ -14,7 +14,7 @@ function Sports({ allvalues, values, inputChange, nextStep }){
         if(values.length !== 0){
             let loader = document.querySelector('.midloader');
             loader.style.display = 'block';
-            console.log(values);
+            // console.log(values);
               axios.post('https://v-a-l.herokuapp.com/api/users/interest',
                 {
                   sports: values,
