@@ -4,12 +4,7 @@ import './Social.css'
 import React ,{useState} from 'react'
 
 function Social(props){
-    const submitHandler = async (e) => {
-        e.preventDefault();
-        if(props.state.otherInt.social !== 0 && props.state.otherInt.news !==0){
-            props.nextStep();
-        }
-    }
+    
     const [newsxtics, setnewsxtics] = useState([
             {name:"🧑🏽‍🎤 Show-bizz",active:false,value:"showbizz"},
             {name:"🤽🏿‍♀️ Sports",active:false,value:"sports"},
@@ -22,7 +17,7 @@ function Social(props){
             {name:"🟩Whatsapp",active:false,value:"tsapp"},
     ])
     let changeHandler = name => {
-        let newsCopy = newsxtics;
+        let newsCopy = [...newsxtics];
         for(let i=0; i < newsCopy.length; i++){
             if(newsCopy[i].name === name){
                 newsCopy[i].active = true
@@ -35,7 +30,7 @@ function Social(props){
         setnewsxtics(newsCopy)
     }
     let changeHandler2 = name => {
-        let socialCopy = socialxtics;
+        let socialCopy = [...socialxtics];
         for(let i=0; i < socialCopy.length; i++){
             if(socialCopy[i].name === name){
                 socialCopy[i].active = true
@@ -46,12 +41,11 @@ function Social(props){
             }
         }
         setsocialxtics(socialCopy)
-        // console.log(socialCopy)
     }
 
 
     let submit = async e => {
-        console.log(props.state)
+        // console.log(props.state)
         await axios.post("https://v-a-l.herokuapp.com/api/users", {
                 "fullName":props.state.fullName,
                 "darassa": props.state.darassa,
@@ -79,29 +73,29 @@ function Social(props){
             // window.alert(data.data.message)
             // window.alert("Check your name")
             localStorage.setItem("token", data.data.token)
+            localStorage.setItem("name", data.data.fullName)
             window.location.href = "/desc-your-match";
         })
         .catch(error => {
             alert(error.response.data.message)
-             window.location.reload(false)
+            window.location.reload(false)
         })
     }
     
     return(
         <div className='social'>
-            <h1>Social Media</h1>
-            <h2>Your favorite Social Media and Content You Look For The Most On It</h2>
+            <h1>Which news and social media?</h1>
             <form className="social-container">
             <div className='socialcard'>
-            {newsxtics && newsxtics.map((newsxtics,i) => (            
-                <div key={i} className={newsxtics.active ? "input-item active" : "input-item"} onClick={e => changeHandler(newsxtics.name)}>
+            {newsxtics && newsxtics.map((newsxtic,i) => (            
+                <div key={i} className={newsxtic.active ? "input-item active" : "input-item"} onClick={e => changeHandler(newsxtic.name)}>
                     <div className="paragraph">
-                        <p>{newsxtics.name}</p>
+                        <p>{newsxtic.name}</p>
                     </div>
                 </div>
             ))}
             <br />
-            {socialxtics.map((socialxtic, i) => (            
+            {socialxtics && socialxtics.map((socialxtic, i) => (            
                 <div key={i} className={socialxtic.active ? "input-item active2" : "input-item"} onClick={e => changeHandler2(socialxtic.name)}>
                     <div className="paragraph">
                         <p>{socialxtic.name}</p>
@@ -118,4 +112,4 @@ function Social(props){
     )
 }
 
-export default Social;
+export default Social

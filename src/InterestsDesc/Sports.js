@@ -14,7 +14,7 @@ function Sports({ allvalues, values, inputChange, nextStep }){
         if(values.length !== 0){
             let loader = document.querySelector('.midloader');
             loader.style.display = 'block';
-            // console.log(allvalues);
+            // console.log(values);
               axios.post('https://v-a-l.herokuapp.com/api/users/interest',
                 {
                   sports: values,
@@ -74,7 +74,7 @@ function Sports({ allvalues, values, inputChange, nextStep }){
                 ))}
             </div>
             </form>
-            <span class="bg-danger spinner-border spinner-border-sm mx-auto midloader"></span>
+            <span className="bg-danger spinner-border spinner-border-sm mx-auto midloader"></span>
             <div className='buttondiv' onClick={e => submitHandler(e)}>
                 <NextButton title={"Get Results"}/>
             </div>
