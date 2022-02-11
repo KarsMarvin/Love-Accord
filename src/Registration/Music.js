@@ -5,8 +5,34 @@ import './CharsReg.css'
 export class Music extends Component {
     continue = e => {
         e.preventDefault();
-        this.props.nextStep();
+        if(this.props.state.interests.music !== ""){
+            this.props.nextStep();
+        }
     };
+    constructor(props){
+        super(props)
+        this.state = {
+            xtics: [
+                {name: "🎧Hip Hop ",active: false, value: "hiphop"},
+                {name: "🎶R&B",active: false, value: "r&b"},
+                {name: "🎺Classical ",active: false, value: "classical"},
+                {name: "🎹Drill ",active: false, value: "drill"},
+            ]
+        }
+    }
+    changeHandler = name => {
+        let musicCopy = this.state.xtics;
+        for(let i=0; i < musicCopy.length; i++){
+            if(musicCopy[i].name === name){
+                musicCopy[i].active = true
+                this.props.state.interests.music = musicCopy[i].value
+            }
+            else {
+                musicCopy[i].active = false
+            }
+        }
+        this.setState({music: musicCopy})
+    }
   render() {
 
     return(
@@ -16,38 +42,13 @@ export class Music extends Component {
             <h2>Music</h2>
             <form className="cards-container">
             <div className='card'>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>🎧Hip Hop</p>
+            {this.state.xtics.map((xtics, i) => (            
+                <div key={i} className={xtics.active ? "input-item active" : "input-item"} onClick={e => this.changeHandler(xtics.name)}>
+                    <div className="paragraph">
+                        <p>{xtics.name}</p>
+                    </div>
                 </div>
-                <div className="input">   
-                <input type="radio" value="hiphop" name='searching' onClick={e => this.props.state.interests.music = e.target.value}/>
-                </div>
-            </div>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>🎶R&B</p>
-                </div>
-                <div className="input">   
-                <input type="radio" value="r&b" name='searching' onClick={e => this.props.state.interests.music = e.target.value}/>
-                </div>
-            </div>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>🎺Classical</p>
-                </div>
-                <div className="input">   
-                <input type="radio" value="classical" name='searching' onClick={e => this.props.state.interests.music = e.target.value}/>
-                </div>
-            </div>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>🎹Drill</p>
-                </div>
-                <div className="input">   
-                <input type="radio" value="drill" name='searching' onClick={e => this.props.state.interests.music = e.target.value}/>
-                </div>
-            </div>
+            ))}
             </div>
             </form>
             
