@@ -25,7 +25,7 @@ export class Desc extends Component {
     changeHandler = name => {
         let skinColorCopy = this.state.skinColor;
         for(let i=0; i < skinColorCopy.length; i++){
-            if(skinColorCopy[i].name == name){
+            if(skinColorCopy[i].name === name){
                 skinColorCopy[i].active = true
                 this.props.state.char.skincolor = skinColorCopy[i].value
             }
@@ -40,7 +40,7 @@ export class Desc extends Component {
         this.props.state.char.height = name
         let heightCopy = this.state.height;
         for(let i=0; i < heightCopy.length; i++){
-            if(heightCopy[i].name == name){
+            if(heightCopy[i].name === name){
                 heightCopy[i].active = true
                 this.props.state.char.height = heightCopy[i].value
             }
