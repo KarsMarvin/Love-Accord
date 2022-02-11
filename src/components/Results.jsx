@@ -2,15 +2,16 @@ import './Results.scss';
 // import {useState} from "react"
 import jwtDecode from 'jwt-decode';
 import Loader from "../components/heartsloader.gif"
+import axios from 'axios';
 
 function Results(){
-    // let decoded;
+    let decoded;
     let token = localStorage.token
     // const [userMatch, setuserMatch] = useState(undefined)
     let wait = true
     if(token){
         try {
-            jwtDecode(token)
+            let user = await axios.get("")
         } catch (error) {
             window.location.href = "/"
         }
