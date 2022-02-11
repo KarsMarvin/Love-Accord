@@ -13,10 +13,10 @@ export class Movies extends Component {
         super(props)
         this.state = {
             xtics: [
-                {name: "🎧Action ",active: false, value: "action"},
-                {name: "🎶Romance ",active: false, value: "romance"},
-                {name: "🎺Horror ",active: false, value: "horror"},
-                {name: "🎹Drama ",active: false, value: "drama"},
+                {name: "🥷🏽Action ",active: false, value: "action"},
+                {name: "🌹Romance ",active: false, value: "romance"},
+                {name: "👻Horror ",active: false, value: "horror"},
+                {name: "🎭Drama ",active: false, value: "drama"},
             ]
         }
     }
@@ -37,8 +37,8 @@ export class Movies extends Component {
       return(
         <div className='characteristics'>
         {/* <h1>Hello Dear World.</h1> */}
-        <h1>What is your go-to movie genre</h1>
-        <h2>Movie</h2>
+        <h1>Movies</h1>
+        <h2>What is your go-to movie genre</h2>
         <form className="cards-container">
         <div className='card'>
         {this.state.xtics.map((xtics, i) => (            

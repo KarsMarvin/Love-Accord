@@ -14,8 +14,8 @@ export class Values extends Component {
         this.state = {
             xtics: [
                 {name: "😎Respect ",active: false, value: "respect"},
-                {name: "🏆Companionship ",active: false, value: "companionship"},
-                {name: "🖌️Commitment ",active: false, value: "commitment"},
+                {name: "🧑🏻‍🤝‍🧑🏾Companionship ",active: false, value: "companionship"},
+                {name: "🔐Commitment ",active: false, value: "commitment"},
                 {name: "💙Empathy ",active: false, value: "empathy"},
             ]
         }
@@ -38,7 +38,7 @@ export class Values extends Component {
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
             <h1>Value & Traits</h1>
-            <h2>Which value do u think is most important in a Relationship</h2>
+            <h2>What Do you think Is Best For a Healthy Relationship</h2>
             <form className="cards-container">
             <div className='card'>
             {this.state.xtics.map((xtics, i) => (            

@@ -45,7 +45,7 @@ function Social(props){
 
 
     let submit = async e => {
-        console.log(props.state)
+        // console.log(props.state)
         await axios.post("https://v-a-l.herokuapp.com/api/users", {
                 "fullName":props.state.fullName,
                 "darassa": props.state.darassa,
@@ -73,6 +73,7 @@ function Social(props){
             // window.alert(data.data.message)
             // window.alert("Check your name")
             localStorage.setItem("token", data.data.token)
+            localStorage.setItem("name", data.data.fullName)
             window.location.href = "/desc-your-match";
         })
         .catch(error => {
@@ -111,4 +112,4 @@ function Social(props){
     )
 }
 
-export default Social;
+export default Social

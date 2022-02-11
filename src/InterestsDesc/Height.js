@@ -33,7 +33,8 @@ function Height({ values, inputChange, nextStep }){
     return(
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
-            <h1>Now, time to describe your valentine!</h1>
+            <h1>Now, Time To Tell Us About your Dream Valentine!</h1>
+            <h2>Pick According to Your Preferences And We'll Match You with A Person That Fits That Description And Loves The Same Things As You</h2>
             <h2>How tall do y' want your match?</h2>
             <form className="cards-container">
             <div className='card' onChange={(e) => inputChange(e.target.value)}>

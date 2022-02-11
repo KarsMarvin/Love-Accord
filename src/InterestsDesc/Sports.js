@@ -14,7 +14,7 @@ function Sports({ allvalues, values, inputChange, nextStep }){
         if(values.length !== 0){
             let loader = document.querySelector('.midloader');
             loader.style.display = 'block';
-            console.log(values);
+            // console.log(values);
               axios.post('https://v-a-l.herokuapp.com/api/users/interest',
                 {
                   sports: values,
@@ -61,8 +61,8 @@ function Sports({ allvalues, values, inputChange, nextStep }){
     return(
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
-            <h1>Which sports is he/she in?</h1>
-            <h2>Sports</h2>
+            <h1>Sport Activities</h1>
+            <h2>If He/She were to partake in a sport, which one would it be?</h2>
             <form className="cards-container">
             <div className='card' onChange={(e) => inputChange(e.target.value)}>
             { xtics && xtics.map((xtic, i) => (                
