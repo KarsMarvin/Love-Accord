@@ -11,7 +11,7 @@ function Results(){
     let wait = true
     if(token){
         try {
-            let user = await axios.get("")
+            let user = axios.get("")
         } catch (error) {
             window.location.href = "/"
         }
