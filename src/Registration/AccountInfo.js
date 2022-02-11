@@ -37,7 +37,8 @@ export class AccountInfo extends Component {
             <section className=''>
                 <section className=''>
                     <form className='form-container col-12 col-sm-3 col-md-3' onSubmit={e => this.handleSubmit(e)}>
-                     <h3>Account Info</h3>
+                     <h4 className='text-center'><span className='text-danger'>Love</span>Accord</h4>
+                     <h6 className=''>Register your personal RCA Info!</h6>
                         <div className=" form-group">
                             <label className="form-label" htmlFor="name" class>Enter Your Name</label>
                             <input type="text" className="form-control" name="name" required onChange={e => this.setState({name: e.target.value})}/>
