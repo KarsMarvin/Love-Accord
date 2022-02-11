@@ -17,7 +17,7 @@ function Social(props){
             {name:"🟩Whatsapp",active:false,value:"tsapp"},
     ])
     let changeHandler = name => {
-        let newsCopy = newsxtics;
+        let newsCopy = [...newsxtics];
         for(let i=0; i < newsCopy.length; i++){
             if(newsCopy[i].name === name){
                 newsCopy[i].active = true
@@ -30,7 +30,7 @@ function Social(props){
         setnewsxtics(newsCopy)
     }
     let changeHandler2 = name => {
-        let socialCopy = socialxtics;
+        let socialCopy = [...socialxtics];
         for(let i=0; i < socialCopy.length; i++){
             if(socialCopy[i].name === name){
                 socialCopy[i].active = true
@@ -41,7 +41,6 @@ function Social(props){
             }
         }
         setsocialxtics(socialCopy)
-        console.log(socialCopy)
     }
 
 
@@ -87,7 +86,7 @@ function Social(props){
             <h1>Which news and social media?</h1>
             <form className="social-container">
             <div className='socialcard'>
-            {newsxtics.map((newsxtic,i) => (            
+            {newsxtics && newsxtics.map((newsxtic,i) => (            
                 <div key={i} className={newsxtic.active ? "input-item active" : "input-item"} onClick={e => changeHandler(newsxtic.name)}>
                     <div className="paragraph">
                         <p>{newsxtic.name}</p>
@@ -95,7 +94,7 @@ function Social(props){
                 </div>
             ))}
             <br />
-            {socialxtics.map((socialxtic, i) => (            
+            {socialxtics && socialxtics.map((socialxtic, i) => (            
                 <div key={i} className={socialxtic.active ? "input-item active2" : "input-item"} onClick={e => changeHandler2(socialxtic.name)}>
                     <div className="paragraph">
                         <p>{socialxtic.name}</p>
