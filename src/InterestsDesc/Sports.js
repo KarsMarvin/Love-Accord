@@ -6,7 +6,7 @@ import { useState } from 'react';
 function Sports({ allvalues, values, inputChange, nextStep }){
     let config = {
         headers: {
-          token: localStorage.getItem("token"),
+          authorization: "Bearer " + localStorage.getItem("token"),
         },
     };
     const submitHandler = async (e) => {
@@ -14,20 +14,21 @@ function Sports({ allvalues, values, inputChange, nextStep }){
         if(values.length !== 0){
             let loader = document.querySelector('.midloader');
             loader.style.display = 'block';
+            console.log(allvalues);
               axios.post('http://v-a-l.herokuapp.com/api/users/interest',
                 {
-                  sports: allvalues[0],
+                  sports: values,
                   values: allvalues[2],
                   skincolor: allvalues[1],
-                  height: values,
+                  height: allvalues[0],
                 },
-                config.headers
+                config
                 ).then(res=>{
                   loader.style.display = 'none';
                 //   console.log(res.data);
                   window.location.href = "/results";
                 }).catch(err=>{
-                  console.log(err.response);
+                //   console.log(err.response);
                   loader.style.display = 'none';
                   window.alert("Something went wrong,try again in sometime");
                 })

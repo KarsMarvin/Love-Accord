@@ -28,10 +28,15 @@ function Social(props){
             }
         )
         .then(data => {
+            // window.alert(data.data.message)
+            // window.alert("Check your name")
             localStorage.setItem("token", data.data.token)
             window.location.href = "/desc-your-match";
         })
-        .catch(error => console.log(error.response))
+        .catch(error => {
+            // console.log(error.response)
+            window.alert(error.response.data.message)
+        })
     }
     return(
         <div className='social'>
