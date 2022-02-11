@@ -55,8 +55,8 @@ export class Desc extends Component {
     return(
 <div className='characteristics'>
             
-            <h1>I'm into someone who's...and...!</h1>
-            <h2>How is your match like?</h2>
+            <h1>Time to Describe Yourself!</h1>
+            <h2>How tall and brown or black are you?</h2>
             <form className="cards-container">
             <div className='card'>
             {this.state.skinColor && this.state.skinColor.map((color,i) => (            

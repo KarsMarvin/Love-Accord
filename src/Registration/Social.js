@@ -71,6 +71,8 @@ function Social(props){
             }
         )
         .then(data => {
+            // window.alert(data.data.message)
+            // window.alert("Check your name")
             localStorage.setItem("token", data.data.token)
             window.location.href = "/desc-your-match";
         })

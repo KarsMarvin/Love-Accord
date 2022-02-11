@@ -1,5 +1,6 @@
 body{
   background-color: var(--DarkBackground);
+  padding: 2.5em 0;
 }
 .app{
   background-color: var(--DarkBackground);
