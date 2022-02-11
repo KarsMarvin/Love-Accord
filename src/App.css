@@ -1,4 +1,6 @@
-
+body{
+  background-color: var(--DarkBackground);
+}
 .app{
   background-color: var(--DarkBackground);
   height: 100vh;

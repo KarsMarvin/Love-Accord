@@ -4,15 +4,33 @@ import NextButton from '../components/NextButton';
 export class Searching extends Component {
     continue = e => {
         e.preventDefault();
-        this.props.nextStep();
+        if(this.props.state.interests.searching !== ""){
+            this.props.nextStep();
+        }
     };
     constructor(props){
         super(props)
         this.state = {
             xtics: [
-                {name: "❤️ A relationship"}
+                {name: "❤️ A relationship ",active: false, value: "relationship"},
+                {name: "🚀 Something casual ",active: false, value: "casual"},
+                {name: "😵 Only For Valentine ",active: false, value: "valantine"},
+                {name: "😲 Situationship ",active: false, value: "situationship"},
             ]
         }
+    }
+    changeHandler = name => {
+        let relationshipCopy = this.state.xtics;
+        for(let i=0; i < relationshipCopy.length; i++){
+            if(relationshipCopy[i].name === name){
+                relationshipCopy[i].active = true
+                this.props.state.interests.searching = relationshipCopy[i].value
+            }
+            else {
+                relationshipCopy[i].active = false
+            }
+        }
+        this.setState({relationship: relationshipCopy})
     }
   render(){
 
@@ -22,39 +40,14 @@ export class Searching extends Component {
                     <h1>I'm into someone who's...and...!</h1>
                     <h2>How is your match like?</h2>
                     <form className="cards-container">
-                        <div className='card'>
-                        <div className='input-item'>
-                            <div className="paragraph">
-                            <p>❤️ A relationship</p>
-                            </div>
-                            <div className="input">   
-                            <input type="radio" value="relationship" name='searching' onClick={e => this.props.state.interests.searching = e.target.value}/>
-                            </div>
-                        </div>
-                        <div className='input-item'>
-                            <div className="paragraph">
-                            <p>🚀 Something casual</p>
-                            </div>
-                            <div className="input">   
-                            <input type="radio" value="casual" name='searching' onClick={e => this.props.state.interests.searching = e.target.value}/>
-                            </div>
-                        </div>
-                        <div className='input-item'>
-                            <div className="paragraph">
-                            <p>😵 Only For Valentine</p>
-                            </div>
-                            <div className="input">   
-                            <input type="radio" value="valantine" name='searching' onClick={e => this.props.state.interests.searching = e.target.value}/>
-                            </div>
-                        </div>
-                        <div className='input-item'>
-                            <div className="paragraph">
-                            <p>😲 Situationship</p>
-                            </div>
-                            <div className="input">   
-                            <input type="radio" value="situationship" name='searching' onClick={e => this.props.state.interests.searching = e.target.value}/>
-                            </div>
-                        </div>
+                        <div className='card' >
+                        {this.state.xtics.map((xtics, i) => (            
+                <div key={i} className={xtics.active ? "input-item active" : "input-item"} onClick={e => this.changeHandler(xtics.name)}>
+                    <div className="paragraph">
+                        <p>{xtics.name}</p>
+                    </div>
+                </div>
+            ))}
                         </div>
                         </form>
                     
