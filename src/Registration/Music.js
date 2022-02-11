@@ -21,7 +21,7 @@ export class Music extends Component {
                 <p>🎧Hip Hop</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="hippop" name='searching' onClick={e => this.props.state.interests.music = e.target.value}/>
+                <input type="radio" value="hiphop" name='searching' onClick={e => this.props.state.interests.music = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>

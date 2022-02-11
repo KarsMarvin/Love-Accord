@@ -6,7 +6,7 @@ import { useState } from 'react';
 function Sports({ allvalues, values, inputChange, nextStep }){
     let config = {
         headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
+          token: localStorage.getItem("token"),
         },
     };
     const submitHandler = async (e) => {
@@ -24,7 +24,7 @@ function Sports({ allvalues, values, inputChange, nextStep }){
                 config.headers
                 ).then(res=>{
                   loader.style.display = 'none';
-                  console.log(res.data);
+                //   console.log(res.data);
                   window.location.href = "/results";
                 }).catch(err=>{
                   console.log(err.response);

@@ -42,19 +42,8 @@ function Height({ values, inputChange, nextStep }){
                     <div className="paragraph">
                         <p>{xtic.name}</p>
                     </div>
-                    {/* <div className="input">   
-                        <input type="radio" name='searching1' value="tall"/>
-                    </div> */}
                 </div>
                 ))}
-            {/* <div className='input-item mt-3'>
-                <div className="paragraph">
-                    <p>😜Medium height</p>
-                </div>
-                <div className="input">   
-                <input type="radio" name='searching1' value="medium"/>
-                </div>
-                </div> */}
             </div>
             </form>
             <div className='buttondiv' onClick={e => submitHandler(e)}>
