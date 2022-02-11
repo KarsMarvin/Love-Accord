@@ -1,7 +1,35 @@
+import axios from 'axios';
+import NextButton from '../components/NextButton';
 import './Social.css'
 
-function Social(){
-
+function Social(props){
+    let submit = async e => {
+        await axios.post("https://v-a-l.herokuapp.com/api/users", {
+                "fullName":"Marvin",
+                "darassa": props.state.darassa,
+                "social":props.state.social,
+                "gender":props.state.gender,
+                "movie":props.state.movie,
+                "interest": {
+                  "music":props.state.interests.music,
+                  "sports":props.state.interests.sports,
+                  "values":props.state.interests.values,
+                  "creativity":"art",
+                  "searching":props.state.interests.searching,
+                  "char": {
+                    "skincolor":props.state.char.skincolor,
+                    "height":props.state.char.height,
+                  }
+                },
+                "otherInt": {
+                  "social":"ig",
+                  "news":props.state.otherInt.news
+                }
+            }
+        )
+        .then(data => localStorage.setItem("token", data.data.token))
+        .catch(error => console.log(error.response))
+    }
     return(
         <div className='social'>
             <h1>Which news and social media?</h1>
@@ -12,7 +40,7 @@ function Social(){
                 <p>🧑🏽‍🎤Show-bizz</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="showbizz" name='searching'/>
+                <input type="radio" value="showbizz" name='searching' onClick={e => props.state.otherInt.news = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
@@ -20,7 +48,7 @@ function Social(){
                 <p>🤽🏿‍♀️Sports</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="sports" name='searching'/>
+                <input type="radio" value="sports" name='searching' onClick={e => props.state.otherInt.news = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
@@ -28,7 +56,7 @@ function Social(){
                 <p>👨🏻‍💻Science&tech</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="science&tech" name='searching'/>
+                <input type="radio" value="science&tech" name='searching' onClick={e => props.state.otherInt.news = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
@@ -36,7 +64,7 @@ function Social(){
                 <p>🧑🏽‍💼Business</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="business" name='searching'/>
+                <input type="radio" value="business" name='searching' onClick={e => props.state.otherInt.news = e.target.value}/>
                 </div>
             </div>
             <div className='input-item mt-4'>
@@ -44,7 +72,7 @@ function Social(){
                 <p>🔶Instagram</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="ig" name='searching1'/>
+                <input type="radio" value="ig" name='searching1' onClick={e => props.state.otherInt.social = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
@@ -52,7 +80,7 @@ function Social(){
                 <p>🔷Twitter</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="twitter" name='searching1'/>
+                <input type="radio" value="twitter" name='searching1' onClick={e => props.state.otherInt.social = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
@@ -60,7 +88,7 @@ function Social(){
                 <p>🟩Whatsapp</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="tsapp" name='searching1'/>
+                <input type="radio" value="tsapp" name='searching1' onClick={e => props.state.otherInt.social = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
@@ -68,14 +96,14 @@ function Social(){
                 <p>🔵Facebook</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="fb" name='searching1'/>
+                <input type="radio" value="fb" name='searching1' onClick={e => props.state.otherInt.social = e.target.value}/>
                 </div>
             </div>
             </div>
             </form>
             
-            <div className="socialbutton">
-                <button type='submit' className='socialnext'>Let's go</button>
+            <div className="text-right buttondiv" onClick={e => submit(e)}>
+                <NextButton/>
             </div>
         </div>
     )

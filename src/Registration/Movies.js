@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NextButton from '../components/NextButton';
 import './CharsReg.css'
 
 export class Movies extends Component {
@@ -19,7 +20,7 @@ export class Movies extends Component {
             <p>🎧Hip Hop</p>
             </div>
             <div className="input">   
-            <input type="radio" value="hippop" name='searching'/>
+            <input type="radio" value="action" name='searching' onClick={e => this.props.state.movie = e.target.value}/>
             </div>
         </div>
         <div className='input-item'>
@@ -27,7 +28,7 @@ export class Movies extends Component {
             <p>🎶R&B</p>
             </div>
             <div className="input">   
-            <input type="radio" value="r&b" name='searching'/>
+            <input type="radio" value="romance" name='searching ' onClick={e => this.props.state.movie = e.target.value}/>
             </div>
         </div>
         <div className='input-item'>
@@ -35,7 +36,7 @@ export class Movies extends Component {
             <p>🎺Classical</p>
             </div>
             <div className="input">   
-            <input type="radio" value="classical" name='searching'/>
+            <input type="radio" value="horror" name='searching' onClick={e => this.props.state.movie = e.target.value}/>
             </div>
         </div>
         <div className='input-item'>
@@ -43,15 +44,16 @@ export class Movies extends Component {
             <p>🎹Drill</p>
             </div>
             <div className="input">   
-            <input type="radio" value="drill" name='searching'/>
+            <input type="radio" value="drama" name='searching' onClick={e => this.props.state.movie = e.target.value}/>
             </div>
         </div>
         </div>
         </form>
         
-        <div className="text-right interestbutton">
-            <button className="btn btn-primary interestnext" onClick={this.continue}>Next</button>
-        </div>
+        <div className="text-right buttondiv" onClick={this.continue}>
+                {/* <button className=" interestnext" onClick={this.continue}>Next</button> */}
+                <NextButton />
+            </div>
     </div>
       )
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NextButton from '../components/NextButton';
 import './CharsReg.css'
 
 export class Values extends Component {
@@ -19,7 +20,7 @@ export class Values extends Component {
                 <p>😎Confidence</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="confidence" name='searching'/>
+                <input type="radio" value="confidence" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
@@ -27,7 +28,7 @@ export class Values extends Component {
                 <p>🏆Being Active</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="active" name='searching'/>
+                <input type="radio" value="active" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
@@ -35,7 +36,7 @@ export class Values extends Component {
                 <p>🖌️Creativity</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="creativity" name='searching'/>
+                <input type="radio" value="creativity" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
@@ -43,14 +44,15 @@ export class Values extends Component {
                 <p>💙Empathy</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="empathy" name='searching'/>
+                <input type="radio" value="empathy" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             </div>
             </form>
             
-            <div className="text-right interestbutton">
-                <button className="btn btn-primary interestnext" onClick={this.continue}>Next</button>
+            <div className="text-right buttondiv" onClick={this.continue}>
+                {/* <button className=" interestnext" onClick={this.continue}>Next</button> */}
+                <NextButton />
             </div>
         </div>
     )

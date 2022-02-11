@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NextButton from '../components/NextButton';
 import './CharsReg.css'
 
 export class Interests extends Component {
@@ -51,8 +52,9 @@ export class Interests extends Component {
             </div>
             </form>
             
-            <div className="text-right interestbutton">
-                <button className="btn btn-primary interestnext" onClick={this.continue}>Next</button>
+            <div className="text-right buttondiv" onClick={this.continue}>
+                {/* <button className=" interestnext" onClick={this.continue}>Next</button> */}
+                <NextButton />
             </div>
         </div>
     )
