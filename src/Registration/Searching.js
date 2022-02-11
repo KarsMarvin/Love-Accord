@@ -14,8 +14,8 @@ export class Searching extends Component {
             xtics: [
                 {name: "❤️ A relationship ",active: false, value: "relationship"},
                 {name: "🚀 Something casual ",active: false, value: "casual"},
-                {name: "😵 Only For Valentine ",active: false, value: "valantine"},
-                {name: "😲 Situationship ",active: false, value: "situationship"},
+                {name: "📅 A valentine's day date ",active: false, value: "valantine"},
+                {name: "👿 Situationship ",active: false, value: "situationship"},
             ]
         }
     }
@@ -37,8 +37,8 @@ export class Searching extends Component {
     return(
         <div className='characteristics'>
                     {/* <h1>Hello Dear World.</h1> */}
-                    <h1>I'm into someone who's...and...!</h1>
-                    <h2>How is your match like?</h2>
+                    <h1>Type Of Relationship</h1>
+                    <h2>What are you looking for</h2>
                     <form className="cards-container">
                         <div className='card' >
                         {this.state.xtics.map((xtics, i) => (            

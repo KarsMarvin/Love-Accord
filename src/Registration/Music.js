@@ -38,8 +38,8 @@ export class Music extends Component {
     return(
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
-            <h1>What Type of songs or rythm?</h1>
-            <h2>Music</h2>
+            <h1>Music</h1>
+            <h2>What type of music you listen to the most?</h2>
             <form className="cards-container">
             <div className='card'>
             {this.state.xtics.map((xtics, i) => (            

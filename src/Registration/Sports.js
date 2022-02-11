@@ -38,9 +38,8 @@ export class Sports extends Component {
 
     return(
         <div className='characteristics'>
-           
             <h1>Which sports is he/she in?</h1>
-            <h2>Sports</h2>
+            <h2>Sports</h2> 
             <form className="cards-container">
             <div className='card'>
             {this.state.xtics.map((xtics, i) => (            

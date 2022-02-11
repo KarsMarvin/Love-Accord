@@ -41,7 +41,7 @@ export class AccountInfo extends Component {
                      <h6 className=''>Register your personal RCA Info!</h6>
                         <div className=" form-group">
                             <label className="form-label" htmlFor="name" class>Enter Your Name</label>
-                            <input type="text" placeholder='David' className="form-control" name="name" required onChange={e => this.setState({name: e.target.value})}/>
+                            <input type="text" placeholder='e.g David' className="form-control" name="name" required onChange={e => this.setState({name: e.target.value})}/>
                         </div>
                         {this.state.gender === "M" ? (
                             <>
@@ -81,7 +81,7 @@ export class AccountInfo extends Component {
                         </div>
                         <div className="form-group">
                             <label className="form-label" htmlFor="ighandle">Your Instagram handle</label>
-                            <input type="text" className="form-control" placeholder='@baganineza_david' name="ighandle" required  onChange={e => this.setState({social: e.target.value})}/>
+                            <input type="text" className="form-control" placeholder='e.g @baganineza_david' name="ighandle" required  onChange={e => this.setState({social: e.target.value})}/>
                         </div>
                         <br />
 

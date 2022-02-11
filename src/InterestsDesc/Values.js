@@ -35,8 +35,8 @@ function Values({ values, inputChange, nextStep }){
     return(
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
-            <h1>Tell us more About him/her!</h1>
-            <h2>Values and traits</h2>
+            <h1>VAlues and Traits</h1>
+            <h2>What Value Do U Want Him/Her To Have The Most</h2>
             <form className="cards-container">
             <div className='card' onChange={(e) => inputChange(e.target.value)}>
             { xtics && xtics.map((xtic, i) => (                

@@ -12,7 +12,7 @@ function Scolor({ values, inputChange, nextStep }){
 
     const [xtics, setxtics] = useState([
         {name: "🧑🏼‍🦲 Brown", active: false, value: "brown"},
-        {name: "🧑🏿‍🦲 Black", active: false, value: "black"}
+        {name: "🧑🏿‍🦲 Dark", active: false, value: "black"}
     ])
 
     let handleChange = (name) => {
@@ -33,8 +33,8 @@ function Scolor({ values, inputChange, nextStep }){
     return(
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
-            <h1>I'm into someone who's...!</h1>
-            <h2>How is your match like?</h2>
+            <h1>Skin Tone</h1>
+            <h2>what Skin tone Dou you prefer?</h2>
             <form className="cards-container">
             <div className='card' onChange={(e) => inputChange(e.target.value)}>
             { xtics && xtics.map((xtic, i) => (                

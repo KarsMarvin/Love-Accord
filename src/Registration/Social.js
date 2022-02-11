@@ -4,7 +4,12 @@ import './Social.css'
 import React ,{useState} from 'react'
 
 function Social(props){
-    
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        if(props.state.otherInt.social !== 0 && props.state.otherInt.news !==0){
+            props.nextStep();
+        }
+    }
     const [newsxtics, setnewsxtics] = useState([
             {name:"🧑🏽‍🎤 Show-bizz",active:false,value:"showbizz"},
             {name:"🤽🏿‍♀️ Sports",active:false,value:"sports"},
@@ -41,7 +46,7 @@ function Social(props){
             }
         }
         setsocialxtics(socialCopy)
-        console.log(socialCopy)
+        // console.log(socialCopy)
     }
 
 
@@ -78,19 +83,20 @@ function Social(props){
         })
         .catch(error => {
             alert(error.response.data.message)
-            window.location.reload(false)
+             window.location.reload(false)
         })
     }
     
     return(
         <div className='social'>
-            <h1>Which news and social media?</h1>
+            <h1>Social Media</h1>
+            <h2>Your favorite Social Media and Content You Look For The Most On It</h2>
             <form className="social-container">
             <div className='socialcard'>
-            {newsxtics.map((newsxtic,i) => (            
-                <div key={i} className={newsxtic.active ? "input-item active" : "input-item"} onClick={e => changeHandler(newsxtic.name)}>
+            {newsxtics && newsxtics.map((newsxtics,i) => (            
+                <div key={i} className={newsxtics.active ? "input-item active" : "input-item"} onClick={e => changeHandler(newsxtics.name)}>
                     <div className="paragraph">
-                        <p>{newsxtic.name}</p>
+                        <p>{newsxtics.name}</p>
                     </div>
                 </div>
             ))}
