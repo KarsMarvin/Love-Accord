@@ -36,7 +36,7 @@ export class AccountInfo extends Component {
         <section className='mainsection'>
             <section className=''>
                 <section className=''>
-                    <form className='form-container col-12 col-sm-3 col-md-3' onSubmit={e => this.handleSubmit(e)}>
+                    <form className='form-container col-12 col-sm-3 col-md-4' onSubmit={e => this.handleSubmit(e)}>
                      <h4 className='text-center'><span className='text-danger'>Love</span>Accord</h4>
                      <h6 className=''>Register your personal RCA Info!</h6>
                         <div className=" form-group">
