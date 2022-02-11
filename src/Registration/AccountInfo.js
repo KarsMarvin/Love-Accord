@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 import '../styles/AccountInfo.scss'
 
@@ -32,7 +31,7 @@ export class AccountInfo extends Component {
     }
 
   render() {
-    const { values } = this.props
+    // const { values } = this.props
     return (
         <section className='mainsection'>
             <section className=''>
