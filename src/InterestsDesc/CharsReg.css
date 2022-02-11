@@ -4,6 +4,7 @@
     padding: 4% 0 1% 0;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .cards-container{
     display: flex;
@@ -46,12 +47,20 @@ h2{
     background-color: rgba(53, 52, 54, 0.274);
     margin-bottom: 3%;
     border-radius: 10px;
+    cursor: pointer;
 }
+
+.input-item.active {
+    color: white;
+    background-color: var(--TextMain);
+}
+
 .paragraph{
     display: flex;
     justify-content: flex-start;
     width: 80%;
-    padding-left: 10%
+    padding-left: 5%;
+    padding-top: 5%
 }
 .input{
     display: flex;
@@ -63,23 +72,31 @@ h2{
 .interestbutton{
     display: flex;
     justify-content: flex-end !important;
-    width: 95%;
-    height: 8%;
+    width: 100%;
+    height: 100%;
 }
 .interestbutton button{
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     width: 10%;
-    height: 100%
+    height: 100% !important;
+    outline: none;
+    border: none;
 }
 .interestbutton button:hover{
     background-color: var(--TextMain);
     color: white;
     transition: all 0.5s;
 }
+.buttondiv{
+    display: flex;
+    justify-content: flex-end !important;
+    width: 95%;
+    height: 8%;
+}
 
 @media screen and (max-width: 780px) {
     .card {
-        width: 100%;
+        width: 75%;
     }
 }
