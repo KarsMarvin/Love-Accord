@@ -6,7 +6,7 @@ import { useState } from 'react';
 function Sports({ allvalues, values, inputChange, nextStep }){
     let config = {
         headers: {
-          Authorization: localStorage.getItem("token"),
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
     };
     const submitHandler = async (e) => {
@@ -19,12 +19,12 @@ function Sports({ allvalues, values, inputChange, nextStep }){
                   skincolor: allvalues[1],
                   height: values,
                 },
-                config
+                config.headers
                 ).then(res=>{
                   console.log(res.data);
                   window.location.href = "/results";
                 }).catch(err=>{
-                  console.log(err);
+                  console.log(err.response);
                   window.alert("Something went wrong,try again in sometime");
                 })
             nextStep();

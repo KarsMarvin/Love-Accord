@@ -17,26 +17,26 @@ export class Values extends Component {
             <div className='card'>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>😎Confidence</p>
+                <p>😎Respect</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="confidence" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
+                <input type="radio" value="respect" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🏆Being Active</p>
+                <p>🏆Companionship</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="active" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
+                <input type="radio" value="companionship" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🖌️Creativity</p>
+                <p>🖌️Commitment</p>
                 </div>
                 <div className="input">   
-                <input type="radio" value="creativity" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
+                <input type="radio" value="commitment" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>

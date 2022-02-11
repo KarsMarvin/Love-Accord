@@ -17,7 +17,7 @@ export class Movies extends Component {
         <div className='card'>
         <div className='input-item'>
              <div className="paragraph">
-            <p>🎧Hip Hop</p>
+            <p>🎧Action</p>
             </div>
             <div className="input">   
             <input type="radio" value="action" name='searching' onClick={e => this.props.state.movie = e.target.value}/>
@@ -25,7 +25,7 @@ export class Movies extends Component {
         </div>
         <div className='input-item'>
              <div className="paragraph">
-            <p>🎶R&B</p>
+            <p>🎶Romance</p>
             </div>
             <div className="input">   
             <input type="radio" value="romance" name='searching ' onClick={e => this.props.state.movie = e.target.value}/>
@@ -33,7 +33,7 @@ export class Movies extends Component {
         </div>
         <div className='input-item'>
              <div className="paragraph">
-            <p>🎺Classical</p>
+            <p>🎺Horror</p>
             </div>
             <div className="input">   
             <input type="radio" value="horror" name='searching' onClick={e => this.props.state.movie = e.target.value}/>
@@ -41,7 +41,7 @@ export class Movies extends Component {
         </div>
         <div className='input-item'>
              <div className="paragraph">
-            <p>🎹Drill</p>
+            <p>🎹Drama</p>
             </div>
             <div className="input">   
             <input type="radio" value="drama" name='searching' onClick={e => this.props.state.movie = e.target.value}/>

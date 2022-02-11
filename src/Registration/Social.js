@@ -5,7 +5,7 @@ import './Social.css'
 function Social(props){
     let submit = async e => {
         await axios.post("https://v-a-l.herokuapp.com/api/users", {
-                "fullName":"Marvin",
+                "fullName":props.state.fullName,
                 "darassa": props.state.darassa,
                 "social":props.state.social,
                 "gender":props.state.gender,
@@ -27,7 +27,10 @@ function Social(props){
                 }
             }
         )
-        .then(data => localStorage.setItem("token", data.data.token))
+        .then(data => {
+            localStorage.setItem("token", data.data.token)
+            window.location.href = "/desc-your-match";
+        })
         .catch(error => console.log(error.response))
     }
     return(
