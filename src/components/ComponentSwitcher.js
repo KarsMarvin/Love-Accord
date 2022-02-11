@@ -3,12 +3,33 @@ import AccountInfo from '../Registration/AccountInfo';
 import Desc from '../Registration/CharsReg'
 import Searching from '../Registration/Searching'
 import Music from '../Registration/Music'
+import Creativity from '../Registration/Creativity'
+import Sports from '../Registration/Sports'
+import Social from '../Registration/Social'
+import Values from '../Registration/Values'
+import Movies from '../Registration/Movies'
 export class SignUp extends Component {
   state={
     step:1,
-    name:' ',
+    fullName:' ',
     gender:' ',
-    classroom:' ',
+    darassa:' ',
+    movie: "",  
+    interests: {
+        music:"",
+        sports:"",
+        values:"",
+        searching:"",
+        creativity:"",
+    },
+    otherInt: {
+        news: "",
+        social: ""
+    },
+    char:{
+        skincolor:" ",
+        height:"",
+    }
   };
   nextStep=()=>{
     const { step } = this.state;  
@@ -18,15 +39,10 @@ export class SignUp extends Component {
   //   const { step } = this.state;  
   //   this.setState({step: step-1})
   // }
-  inputChange = input=>e=>{
-    this.setState({
-      [input]: e.target.value
-    })
-  }
-  render() {
+
+   render() {
     const { step } = this.state;
-    const { name, email, phone, password, facebook, twitter, github } = this.state;
-    const values = { name, email, phone, password, facebook, twitter, github };
+    
 
     switch (step) {
         case 1:
@@ -34,7 +50,8 @@ export class SignUp extends Component {
                 <AccountInfo
                     nextStep={this.nextStep}
                     inputChange={this.inputChange}
-                    values={values}
+                    state={this.state}
+                    
                 />
             );
         case 2:
@@ -42,32 +59,72 @@ export class SignUp extends Component {
                  <Desc
                     nextStep={this.nextStep}
                     inputChange={this.inputChange}
-                    values={values}
+                    state={this.state}
                 />
-            );
+);
         case 3:
             return (
                <Searching
                     nextStep={this.nextStep}
                     inputChange={this.inputChange}
-                    values={values}
+                    state={this.state}
                 />
-            );
+);
         case 4:
             return (
                <Music
                     nextStep={this.nextStep}
                     inputChange={this.inputChange}
-                    values={values}
+                    state={this.state}
                 />
-            );
+);
+            case 5:
+              return (
+                 <Sports
+                      nextStep={this.nextStep}
+                      inputChange={this.inputChange}
+                      state={this.state}
+                  />
+);
+              case 6:
+            return (
+               <Movies
+                    nextStep={this.nextStep}
+                    inputChange={this.inputChange}
+                    state={this.state}
+                />
+);
+            case 7:
+            return (
+               <Creativity
+                    nextStep={this.nextStep}
+                    inputChange={this.inputChange}
+                    state={this.state}
+                />
+);
+            case 8:
+              return (
+                 <Values
+                      nextStep={this.nextStep}
+                      inputChange={this.inputChange}
+                      state={this.state}
+                  />
+);
+              case 9:
+            return (
+               <Social
+                    nextStep={this.nextStep}
+                    inputChange={this.inputChange}
+                    state={this.state}
+                />
+);
         default: return (
-          <Music
+          <AccountInfo
             nextStep={this.nextStep}
             inputChange={this.inputChange}
-            values={values}
+            state={this.state}
           />
-        )
+)
     }
 }
 }

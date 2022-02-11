@@ -1,11 +1,13 @@
-import './CharsReg.css'
+import React, { Component } from 'react';
 import NextButton from '../components/NextButton';
+import './CharsReg.css'
 
-function Values(){
-    const submitHandler = async (e) => {
-        
-    }
-
+export class Values extends Component {
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+    };
+  render() {
     return(
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
@@ -15,26 +17,26 @@ function Values(){
             <div className='card'>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>😎Confidence</p>
+                <p>😎Respect</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="respect" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🏆Being Active</p>
+                <p>🏆Companionship</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="companionship" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
                  <div className="paragraph">
-                <p>🖌️Creativity</p>
+                <p>🖌️Commitment</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="commitment" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             <div className='input-item'>
@@ -42,15 +44,18 @@ function Values(){
                 <p>💙Empathy</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching'/>
+                <input type="radio" value="empathy" name='searching' onClick={e => this.props.state.interests.values = e.target.value}/>
                 </div>
             </div>
             </div>
             </form>
             
-            <NextButton onClick={submitHandler} className='interestnext'/>
+            <div className="text-right buttondiv" onClick={this.continue}>
+                {/* <button className=" interestnext" onClick={this.continue}>Next</button> */}
+                <NextButton />
+            </div>
         </div>
     )
 }
-
+}
 export default Values;

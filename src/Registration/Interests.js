@@ -1,18 +1,14 @@
-import './CharsReg.css'
-import { useState } from 'react';
+import React, { Component } from 'react';
 import NextButton from '../components/NextButton';
-// import axios from 'axios';
+import './CharsReg.css'
 
-function Interests(){
-
-    const [searching, setSearching] = useState("");
-    const submitHandler = async (e) => {
+export class Interests extends Component {
+    continue = e => {
         e.preventDefault();
-        if(searching.length > 0){
-            console.log(searching,"hello");
-            window.location.href = "/social";
-        }
+        this.props.nextStep();
     };
+  render() {
+
 
     return(
         <div className='characteristics'>
@@ -26,7 +22,7 @@ function Interests(){
                 <p>🎮Games</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching' value="games"/>
+                <input type="radio" value="games" name='searching' value="games"/>
                 </div>
             </div>
             <div className='input-item'>
@@ -34,7 +30,7 @@ function Interests(){
                 <p>📺Movies</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching' value="movies"/>
+                <input type="radio" value="" name='searching' value="movies"/>
                 </div>
             </div>
             <div className='input-item'>
@@ -42,7 +38,7 @@ function Interests(){
                 <p>💃Dancing</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching' value="dancing"/>
+                <input type="radio" value="" name='searching' value="dancing"/>
                 </div>
             </div>
             <div className='input-item'>
@@ -50,15 +46,18 @@ function Interests(){
                 <p>🎤Singing</p>
                 </div>
                 <div className="input">   
-                <input type="radio" name='searching' value="singing"/>
+                <input type="radio" value="" name='searching' value="singing"/>
                 </div>
             </div>
             </div>
             </form>
             
-            <NextButton onClick={submitHandler} className='interestnext'/>
+            <div className="text-right buttondiv" onClick={this.continue}>
+                {/* <button className=" interestnext" onClick={this.continue}>Next</button> */}
+                <NextButton />
+            </div>
         </div>
     )
 }
-
+}
 export default Interests;
