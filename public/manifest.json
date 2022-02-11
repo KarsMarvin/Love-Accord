@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Loveaccord",
+  "name": "Valentine's app",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "Symbolic_Love_Heart.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "Symbolic_Love_Heart.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "Symbolic_Love_Heart.png",
       "type": "image/png",
       "sizes": "512x512"
     }

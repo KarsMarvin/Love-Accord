@@ -5,48 +5,49 @@ import './CharsReg.css'
 export class Movies extends Component {
     continue = e => {
         e.preventDefault();
-        this.props.nextStep();
+        if(this.props.state.interests.movie !== "" ){
+            this.props.nextStep();
+        }
     };
+    constructor(props){
+        super(props)
+        this.state = {
+            xtics: [
+                {name: "🎧Action ",active: false, value: "action"},
+                {name: "🎶Romance ",active: false, value: "romance"},
+                {name: "🎺Horror ",active: false, value: "horror"},
+                {name: "🎹Drama ",active: false, value: "drama"},
+            ]
+        }
+    }
+    changeHandler = name => {
+        let movieCopy = this.state.xtics;
+        for(let i=0; i < movieCopy.length; i++){
+            if(movieCopy[i].name === name){
+                movieCopy[i].active = true
+                this.props.state.movie = movieCopy[i].value
+            }
+            else {
+                movieCopy[i].active = false
+            }
+        }
+        this.setState({movie: movieCopy})
+    }
   render() {
       return(
         <div className='characteristics'>
         {/* <h1>Hello Dear World.</h1> */}
-        <h1>What Type of songs or rythm?</h1>
-        <h2>Music</h2>
+        <h1>What is your go-to movie genre</h1>
+        <h2>Movie</h2>
         <form className="cards-container">
         <div className='card'>
-        <div className='input-item'>
-             <div className="paragraph">
-            <p>🎧Action</p>
-            </div>
-            <div className="input">   
-            <input type="radio" value="action" name='searching' onClick={e => this.props.state.movie = e.target.value}/>
-            </div>
-        </div>
-        <div className='input-item'>
-             <div className="paragraph">
-            <p>🎶Romance</p>
-            </div>
-            <div className="input">   
-            <input type="radio" value="romance" name='searching ' onClick={e => this.props.state.movie = e.target.value}/>
-            </div>
-        </div>
-        <div className='input-item'>
-             <div className="paragraph">
-            <p>🎺Horror</p>
-            </div>
-            <div className="input">   
-            <input type="radio" value="horror" name='searching' onClick={e => this.props.state.movie = e.target.value}/>
-            </div>
-        </div>
-        <div className='input-item'>
-             <div className="paragraph">
-            <p>🎹Drama</p>
-            </div>
-            <div className="input">   
-            <input type="radio" value="drama" name='searching' onClick={e => this.props.state.movie = e.target.value}/>
-            </div>
-        </div>
+        {this.state.xtics.map((xtics, i) => (            
+                <div key={i} className={xtics.active ? "input-item active" : "input-item"} onClick={e => this.changeHandler(xtics.name)}>
+                    <div className="paragraph">
+                        <p>{xtics.name}</p>
+                    </div>
+                </div>
+            ))}
         </div>
         </form>
         

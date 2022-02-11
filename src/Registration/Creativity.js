@@ -5,8 +5,34 @@ import './CharsReg.css'
 export class Creativity extends Component {
     continue = e => {
         e.preventDefault();
-        this.props.nextStep();
+        if(this.props.state.interests.creativity!== ""){
+            this.props.nextStep();
+        }
     };
+    constructor(props){
+        super(props)
+        this.state = {
+            xtics: [
+                {name: "📝Writing ",active: false, value: "writing"},
+                {name: "🎨Art ",active: false, value: "art"},
+                {name: "📸Photography ",active: false, value: "photography"},
+                {name: "🎥Making Videos ",active: false, value: "makingvideo"},
+            ]
+        }
+    }
+    changeHandler = name => {
+        let relationshipCopy = this.state.xtics;
+        for(let i=0; i < relationshipCopy.length; i++){
+            if(relationshipCopy[i].name === name){
+                relationshipCopy[i].active = true
+                this.props.state.interests.creativity = relationshipCopy[i].value
+            }
+            else {
+                relationshipCopy[i].active = false
+            }
+        }
+        this.setState({relationship: relationshipCopy})
+    }
   render() {
     return(
         <div className='characteristics'>
@@ -15,38 +41,13 @@ export class Creativity extends Component {
             <h2>Creativity</h2>
             <form className="cards-container">
             <div className='card'>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>📝Writing</p>
+            {this.state.xtics.map((xtics, i) => (            
+                <div key={i} className={xtics.active ? "input-item active" : "input-item"} onClick={e => this.changeHandler(xtics.name)}>
+                    <div className="paragraph">
+                        <p>{xtics.name}</p>
+                    </div>
                 </div>
-                <div className="input">   
-                <input type="radio" values="writing" name='searching' onClick={e => this.props.state.interests.creativity = e.target.value}/>
-                </div>
-            </div>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>🎨Art</p>
-                </div>
-                <div className="input">   
-                <input type="radio" values="art" name='searching' onClick={e => this.props.state.interests.creativity = e.target.value}/>
-                </div>
-            </div>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>📸Photography</p>
-                </div>
-                <div className="input">   
-                <input type="radio" values="photograph" name='searching' onClick={e => this.props.state.interests.creativity = e.target.value}/>
-                </div>
-            </div>
-            <div className='input-item'>
-                 <div className="paragraph">
-                <p>🎥Making Videos</p>
-                </div>
-                <div className="input">   
-                <input type="radio" values="makingvideo" name='searching' onClick={e => this.props.state.interests.creativity = e.target.value}/>
-                </div>
-            </div>
+            ))}
             </div>
             </form>
             
