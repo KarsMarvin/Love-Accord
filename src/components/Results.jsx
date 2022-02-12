@@ -18,6 +18,7 @@ function Results(){
     }
 
     const [userMatch, setuserMatch] = useState(undefined)
+    const [username, setusername] = useState(undefined)
 
     let wait = false
     useEffect(() => {
@@ -30,6 +31,7 @@ function Results(){
         await axios.get("https://v-a-l.herokuapp.com/api/users/getMatch", config)
         .then(data => {
             setuserMatch(data.data.pattern)
+            setusername(data.data.yourData.fullName)
         })
         .catch(err => console.log(err.response))
       }
@@ -49,7 +51,7 @@ function Results(){
         :
         (
             <div className='results'>
-                <h1>Happy for You😍!</h1>
+                <h1>Happy for You😍 {username && username}!</h1>
                 <h5>Your best match is:</h5>
                 <div className='results-container mt-4'>
                     {userMatch && 
