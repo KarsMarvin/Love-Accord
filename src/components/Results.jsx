@@ -4,6 +4,7 @@ import './Results.scss';
 import Loader from "../components/heartsloader.gif"
 import { useEffect , useState} from 'react';
 import axios from 'axios';
+import giphfy from "../components/giphy.gif"
 // import axios from 'axios';
 
 function Results(){
@@ -19,6 +20,7 @@ function Results(){
 
     const [userMatch, setuserMatch] = useState(undefined)
     const [username, setusername] = useState(undefined)
+    const [nomatch, setnomatch] = useState(false)
 
     let wait = true
     useEffect(() => {
@@ -33,7 +35,7 @@ function Results(){
             setuserMatch(data.data.pattern)
             setusername(data.data.yourData.fullName)
         })
-        .catch(err => console.log(err.response))
+        .catch(err => setnomatch(true))
       }
       getResults()
     }, [])
@@ -51,6 +53,16 @@ function Results(){
         :
         (
             <div className='results'>
+                {nomatch ? (
+                    <div className='nomatch'>
+                        <h5 className='text-center'>Awww, Sorry no match foound for you!</h5>
+                        <h5 className='text-center'>There is someone for u out there, but not in RCA😁</h5>
+                        <div><img src={giphfy} alt="" /></div>
+                    </div>
+                )
+            :
+            (
+                <>
                 <h1>Happy for You😍 {username && username}!</h1>
                 <h5>Your best match is:</h5>
                 <div className='results-container mt-4'>
@@ -96,7 +108,9 @@ function Results(){
                             </div>
                         </>
                     )}
-                </div>
+                </div></>
+            )
+            }
             </div>
         )
 }
