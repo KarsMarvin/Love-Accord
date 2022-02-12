@@ -21,7 +21,7 @@ function Height({ values, inputChange, nextStep }){
             if(xticsCopy[i].name === name){
                 xticsCopy[i].active = true
                 inputChange(xticsCopy[i].value)
-                console.log(xticsCopy[i].value)
+                // console.log(xticsCopy[i].value)
             }
             else {
                 xticsCopy[i].active = false
@@ -34,7 +34,7 @@ function Height({ values, inputChange, nextStep }){
         <div className='characteristics'>
             {/* <h1>Hello Dear World.</h1> */}
             <h1>Now, Time To Tell Us About your Dream Valentine!</h1>
-            <h2>Pick According to Your Preferences And We'll Match You with A Person That Fits That Description And Loves The Same Things As You</h2>
+            <p className="text-sm text-center text-secondary">Pick According to Your Preferences And We'll Match You with A Person That Fits That Description And Loves The Same Things As You</p>
             <h2>How tall do y' want your match?</h2>
             <form className="cards-container">
             <div className='card' onChange={(e) => inputChange(e.target.value)}>

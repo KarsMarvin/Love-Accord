@@ -72,8 +72,9 @@ function Social(props){
         .then(data => {
             // window.alert(data.data.message)
             // window.alert("Check your name")
+            console.log(data,"heeeee")
             localStorage.setItem("token", data.data.token)
-            localStorage.setItem("name", data.data.fullName)
+            localStorage.setItem("name", data.fullName)
             window.location.href = "/desc-your-match";
         })
         .catch(error => {
