@@ -21,7 +21,7 @@ function Scolor({ values, inputChange, nextStep }){
             if(xticsCopy[i].name === name){
                 xticsCopy[i].active = true
                 inputChange(xticsCopy[i].value)
-                console.log(xticsCopy[i].value)
+                // console.log(xticsCopy[i].value)
             }
             else {
                 xticsCopy[i].active = false
