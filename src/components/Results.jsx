@@ -22,7 +22,7 @@ function Results(){
     const [username, setusername] = useState(undefined)
     const [nomatch, setnomatch] = useState(false)
 
-    let wait = true
+    let wait = false
     useEffect(() => {
         let config = {
             headers: {
