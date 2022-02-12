@@ -5,6 +5,10 @@ import Sports from '../InterestsDesc/Sports';
 import Values from '../InterestsDesc/Values';
 
 function MatchFinder() {
+  let tokenFound = localStorage.getItem("token");
+  if(!tokenFound){
+    window.location.href = "/";
+  }
   const [step,setStep] = useState(1);
   const [height,setHeight] = useState('');
   const [values,setValues] = useState('');
