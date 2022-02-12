@@ -1,16 +1,21 @@
 import './Results.scss';
 // import {useState} from "react"
-import jwtDecode from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 import Loader from "../components/heartsloader.gif"
+import axios from 'axios';
 
 function Results(){
+    // let tokenFound = localStorage.getItem("token");
+    // if(!tokenFound){
+    //     window.location.href = "/";
+    // }
     // let decoded;
     let token = localStorage.token
     // const [userMatch, setuserMatch] = useState(undefined)
     let wait = true
     if(token){
         try {
-            jwtDecode(token)
+            axios.get("")
         } catch (error) {
             window.location.href = "/"
         }
@@ -22,7 +27,7 @@ function Results(){
         (
             <div className='waitResults'>
                  <div>
-                    <h5>Holla! We findin' your match... Wait just <span>3 hours</span></h5>
+                    <h5>Holla! We findin' your match... Wait just <span>2 hours</span></h5>
                     <br />
                  <img src={Loader} alt="" />
                  </div>
