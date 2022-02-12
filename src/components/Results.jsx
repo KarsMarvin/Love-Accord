@@ -17,33 +17,7 @@ function Results(){
         window.location.href = "/"
     }
 
-    const [userMatch, setuserMatch] = useState(
-        {
-            "interest": {
-              "char": {
-                "skincolor": "brown",
-                "height": "tall"
-              },
-              "music": "hiphop",
-              "sports": "football",
-              "values": "respect",
-              "searching": "relationship",
-              "creativity": "art"
-            },
-            "otherInt": {
-              "social": "ig",
-              "news": "showbizz"
-            },
-            "_id": "6207b91af8d63e1f87a22b19",
-            "fullName": "VERITE",
-            "darassa": "Y2B",
-            "social": "dd",
-            "gender": "F",
-            "movie": "action",
-            "isTaken": true,
-            "__v": 0
-          }
-    )
+    const [userMatch, setuserMatch] = useState(undefined)
 
     let wait = false
     useEffect(() => {
@@ -55,36 +29,11 @@ function Results(){
       async function getResults(){
         await axios.get("https://v-a-l.herokuapp.com/api/users/getMatch", config)
         .then(data => {
-            console.log(data.data)
+            setuserMatch(data.data.pattern)
         })
         .catch(err => console.log(err.response))
       }
       getResults()
-      setuserMatch( {
-        "interest": {
-          "char": {
-            "skincolor": "brown",
-            "height": "tall"
-          },
-          "music": "hiphop",
-          "sports": "football",
-          "values": "respect",
-          "searching": "relationship",
-          "creativity": "art"
-        },
-        "otherInt": {
-          "social": "ig",
-          "news": "showbizz"
-        },
-        "_id": "6207b91af8d63e1f87a22b19",
-        "fullName": "VERITE",
-        "darassa": "Y2B",
-        "social": "dd",
-        "gender": "F",
-        "movie": "action",
-        "isTaken": true,
-        "__v": 0
-      })
     }, [])
     
     return wait ?
@@ -101,7 +50,7 @@ function Results(){
         (
             <div className='results'>
                 <h1>Happy for You😍!</h1>
-                <h5>Your match is:</h5>
+                <h5>Your best match is:</h5>
                 <div className='results-container mt-4'>
                     {userMatch && 
                     (
@@ -110,6 +59,20 @@ function Results(){
                             <div>
                                 <p>{userMatch.darassa}</p>
                                 <p><span>IG: </span>{userMatch.social}</p>
+                            </div>
+                            <div>
+                                <h6 className='text-center'>Characteristics</h6>
+                                <div>
+                                    {Object.keys(userMatch.interest.char).map((keyname, i) => 
+                                        typeof userMatch.interest.char[keyname] !== "object" &&
+                                            (
+                                               <div key={i}>
+                                                    <h6>{keyname.toUpperCase()}</h6>
+                                                    <p>{userMatch.interest.char[keyname].toString()}</p>
+                                               </div>
+                                            )
+                                    )}
+                                </div>
                             </div>
                             <div>
                                 <h6 className='text-center'>Interests</h6>
@@ -123,6 +86,10 @@ function Results(){
                                                </div>
                                             )
                                     )}
+                                    <div>
+                                        <h6>MOVIE</h6>
+                                        <p>{userMatch.movie}</p>
+                                    </div>
                                 </div>
                             </div>
                         </>
