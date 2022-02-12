@@ -42,7 +42,7 @@ function Results(){
         (
             <div className='waitResults'>
                  <div>
-                    <h5>Holla! We findin' your match... About to come..</h5>
+                    <h5>Holla! We findin' your match... <span>About to come..</span></h5>
                     <br />
                  <img src={Loader} alt="" />
                  </div>
