@@ -26,11 +26,17 @@ export class AccountInfo extends Component {
          this.props.nextStep()
     }
 
+
     handleGender = (e) => {
         this.setState({gender: e.target.value})
     }
 
+    componentDidMount(){
+        if(localStorage.token) window.location.href = "/results"
+    }
+
   render() {
+    
     // const { values } = this.props
     return (
         <section className='mainsection'>
