@@ -2,23 +2,34 @@ import './Results.scss';
 // import {useState} from "react"
 // import jwtDecode from 'jwt-decode';
 import Loader from "../components/heartsloader.gif"
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 // import axios from 'axios';
 
 function Results(){
     // let decoded;
     // let token = localStorage.token
-    // const [userMatch, setuserMatch] = useState(undefined)
+    if(!localStorage.token){
+        window.location.href = "/"
+    }
+    const [userMatch, setuserMatch] = useState(undefined)
     let wait = true
-    // if(token){
-    //     try {
-    //         let user = axios.get("")
-    //     } catch (error) {
-    //         window.location.href = "/"
-    //     }
-    // }
-    // else{
-    //     window.location.href = "/"
-    // }
+    useEffect(() => {
+        let config = {
+            headers: {
+              authorization: "Bearer " + localStorage.getItem("token"),
+            },
+        };
+      async function getResults(){
+        await axios.get("https://v-a-l.herokuapp.com/api/users/getMatch", config)
+        .then(data => {
+            console.log(data.data)
+        })
+        .catch(err => console.log(err.response))
+      }
+      getResults()
+    }, [])
+    
     return wait ?
         (
             <div className='waitResults'>
