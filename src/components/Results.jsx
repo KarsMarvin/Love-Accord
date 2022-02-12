@@ -2,7 +2,7 @@ import './Results.scss';
 // import {useState} from "react"
 // import jwtDecode from 'jwt-decode';
 import Loader from "../components/heartsloader.gif"
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 // import axios from 'axios';
 
@@ -16,7 +16,7 @@ function Results(){
     if(!localStorage.token){
         window.location.href = "/"
     }
-    const [userMatch, setuserMatch] = useState(undefined)
+    // const [userMatch, setuserMatch] = useState(undefined)
     let wait = true
     useEffect(() => {
         let config = {
