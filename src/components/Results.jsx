@@ -33,7 +33,7 @@ function Results(){
         await axios.get("https://v-a-l.herokuapp.com/api/users/getMatch", config)
         .then(data => {
             setuserMatch(data.data.pattern)
-            setusername(data.data.yourData.fullName)
+            setusername(data.data.yourData.fullName) 
         })
         .catch(err => setnomatch(true))
       }
