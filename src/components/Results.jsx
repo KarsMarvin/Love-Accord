@@ -5,6 +5,7 @@ import Loader from "../components/heartsloader.gif"
 import { useEffect , useState} from 'react';
 import axios from 'axios';
 import giphfy from "../components/giphy.gif"
+import jwtdecode from "jwt-decode"
 // import axios from 'axios';
 
 function Results(){
@@ -17,6 +18,9 @@ function Results(){
     if(!localStorage.token){
         window.location.href = "/"
     }
+    else {
+        var decoded = jwtdecode(localStorage.token)
+    }
 
     const [userMatch, setuserMatch] = useState(undefined)
     const [username, setusername] = useState(undefined)
@@ -24,21 +28,25 @@ function Results(){
 
     let wait = false
     useEffect(() => {
-        let config = {
-            headers: {
-              authorization: "Bearer " + localStorage.getItem("token"),
-            },
-        };
+
       async function getResults(){
-        await axios.get("https://v-a-l.herokuapp.com/api/users/getMatch", config)
-        .then(data => {
-            setuserMatch(data.data.pattern)
-            setusername(data.data.yourData.fullName) 
+        await axios.post("https://v-a-l.herokuapp.com/api/users/addToken", {id: decoded.id})
+        .then(async data => {
+            localStorage.setItem("token", data.data.token)
+            await axios.get("https://v-a-l.herokuapp.com/api/users/getMatch", {
+                headers: {
+                  authorization: "Bearer " + data.data.token,
+                },
+            })
+            .then(data => {
+                setuserMatch(data.data.pattern)
+                setusername(data.data.yourData.fullName) 
+            })
         })
         .catch(err => setnomatch(true))
       }
       getResults()
-    }, [])
+    }, [decoded.id])
     
     return wait ?
         (
